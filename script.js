@@ -4,12 +4,12 @@ const sonidoClick = document.getElementById('sonidoClick');
 const sonidoHover = document.getElementById('sonidoHover');
 
 const gestaltInfo = {
-    "figura-fondo": { nombre: "Relación Figura-Fondo", explicacion: "Nuestra percepción organiza el campo visual en una 'figura' que resalta y un 'fondo' que la rodea...", imagen: "assets/gestalt_figura_fondo_placeholder.png" },
-    "proximidad": { nombre: "Principio de Proximidad", explicacion: "Tendemos a agrupar perceptualmente los elementos que están cercanos entre sí...", imagen: "assets/gestalt_proximidad_placeholder.png" },
-    "similitud": { nombre: "Principio de Similitud", explicacion: "Agrupamos los elementos que son similares en forma, tamaño, color...", imagen: "assets/gestalt_similitud_placeholder.png" },
-    "direccion": { nombre: "Principio de Continuidad", explicacion: "Los estímulos que guardan una continuidad de forma o dirección tienden a ser percibidos como una unidad...", imagen: "assets/gestalt_direccion_placeholder.png" },
-    "simplicidad": { nombre: "Principio de Simplicidad (Buena Forma)", explicacion: "Organizamos los campos perceptuales con rasgos simples, regulares y estables...", imagen: "assets/gestalt_simplicidad_placeholder.png" },
-    "cierre": { nombre: "Principio de Cierre", explicacion: "Nuestra mente tiende a completar las figuras incompletas para darles sentido...", imagen: "assets/gestalt_cierre_placeholder.png" }
+    "figura-fondo": { nombre: "Relación Figura-Fondo", explicacion: "Nuestra percepción organiza el campo visual en una 'figura' que resalta y un 'fondo' que la rodea. En imágenes ambiguas, la figura y el fondo pueden alternarse.", imagen: "assets/gestalt_figura_fondo_placeholder.png" },
+    "proximidad": { nombre: "Principio de Proximidad", explicacion: "Tendemos a agrupar perceptualmente los elementos que están cercanos entre sí. Los objetos próximos se ven como una unidad.", imagen: "assets/gestalt_proximidad_placeholder.png" },
+    "similitud": { nombre: "Principio de Similitud", explicacion: "Agrupamos los elementos que son similares en forma, tamaño, color. Lo similar tiende a ser percibido como parte del mismo conjunto.", imagen: "assets/gestalt_similitud_placeholder.png" },
+    "direccion": { nombre: "Principio de Continuidad", explicacion: "Los estímulos que guardan una continuidad de forma o dirección tienden a ser percibidos como una unidad.", imagen: "assets/gestalt_direccion_placeholder.png" },
+    "simplicidad": { nombre: "Principio de Simplicidad (Buena Forma)", explicacion: "Organizamos los campos perceptuales con rasgos simples, regulares y estables. Preferimos lo simple.", imagen: "assets/gestalt_simplicidad_placeholder.png" },
+    "cierre": { nombre: "Principio de Cierre", explicacion: "Nuestra mente tiende a completar las figuras incompletas para darles sentido.", imagen: "assets/gestalt_cierre_placeholder.png" }
 };
 
 const actividadesSensorialesPorEdad = {
@@ -49,26 +49,26 @@ document.addEventListener('DOMContentLoaded', () => {
             const isActive = mainNav.classList.toggle('is-active');
             menuToggle.setAttribute('aria-expanded', isActive.toString());
             mainNav.setAttribute('aria-hidden', (!isActive).toString());
-            menuToggle.querySelector('i').classList.toggle('fa-bars');
-            menuToggle.querySelector('i').classList.toggle('fa-times');
+            const icon = menuToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
             playSound(sonidoClick);
         });
 
-        // Cerrar menú al hacer clic en un enlace
         mainNav.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 if (mainNav.classList.contains('is-active')) {
                     mainNav.classList.remove('is-active');
                     menuToggle.setAttribute('aria-expanded', 'false');
                     mainNav.setAttribute('aria-hidden', 'true');
-                    menuToggle.querySelector('i').classList.remove('fa-times');
-                    menuToggle.querySelector('i').classList.add('fa-bars');
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
                 }
             });
         });
     }
 
-    // Smooth scrolling para enlaces de nav (revisado)
     document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -76,27 +76,20 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
-                // Considerar el header fijo para el offset
                 const headerOffset = document.querySelector('header').offsetHeight || 70;
                 const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
                 const offsetPosition = elementPosition - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: "smooth"
-                });
+                window.scrollTo({ top: offsetPosition, behavior: "smooth" });
             }
         });
     });
     
-    // --- MODALES ---
     const modalTriggers = document.querySelectorAll('.modal-trigger');
     modalTriggers.forEach(trigger => {
         trigger.addEventListener('click', function() {
             const modalId = this.dataset.modalTarget;
             const modal = document.getElementById(modalId);
             if (modal) {
-                // Si es un modal de Gestalt, cargar contenido específico
                 if (modalId === 'modal-gestalt' && this.dataset.gestaltKey) {
                     const gestaltKey = this.dataset.gestaltKey;
                     const info = gestaltInfo[gestaltKey];
@@ -104,11 +97,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         modal.querySelector('#modalGestaltNombre').textContent = info.nombre;
                         modal.querySelector('#modalGestaltExplicacion').textContent = info.explicacion;
                         const imgEl = modal.querySelector('#modalGestaltImagen');
-                        imgEl.src = info.imagen;
+                        imgEl.src = info.imagen.startsWith('assets/') ? info.imagen : `assets/${info.imagen}`; // Asegurar ruta a assets
                         imgEl.alt = `Ejemplo de ${info.nombre}`;
                     }
                 }
-                // (Podrías añadir lógica similar para otros modales si su contenido es dinámico)
                 openModal(modal);
             }
         });
@@ -122,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     window.addEventListener('click', (event) => {
-        document.querySelectorAll('.modal').forEach(modal => {
+        document.querySelectorAll('.modal.is-visible').forEach(modal => {
             if (event.target === modal) {
                 closeModal(modal);
             }
@@ -137,16 +129,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- ACORDEONES ---
     document.querySelectorAll(".accordion-header").forEach(header => {
         header.addEventListener("click", function() {
             playSound(sonidoClick);
             const content = this.nextElementSibling;
             const item = this.parentElement;
             const isActive = item.classList.toggle('active');
-            this.classList.toggle('active', isActive); // Para el icono +/-
+            this.classList.toggle('active', isActive);
 
-            // Cerrar otros acordeones en el mismo contenedor
             if (isActive) {
                 const parentContainer = this.closest('.accordion-container');
                 if (parentContainer) {
@@ -176,39 +166,41 @@ document.addEventListener('DOMContentLoaded', () => {
         header.addEventListener("mouseenter", () => playSound(sonidoHover, 0.2));
     });
   
-    // Sonidos para botones de acción y tabs
     document.querySelectorAll('.action-button, .tab-button, .action-button-inline').forEach(button => {
         button.addEventListener("mouseenter", () => playSound(sonidoHover, 0.2));
     });
 
-    // Simulador Sensorial: Carga inicial y listener
     const edadSelectSensorial = document.getElementById('sim-edad-sensorial');
     if(edadSelectSensorial) {
         edadSelectSensorial.addEventListener('change', cargarActividadesSimuladorSensorial);
         cargarActividadesSimuladorSensorial(); 
     }
 
-    // Tabs Evolución: Listener para botones
     document.querySelectorAll('#evolucion .tab-button').forEach(button => {
         button.addEventListener('click', function() {
-            const contentId = this.getAttribute('onclick').match(/'([^']+)'/)[1]; // Asumiendo que el onclick sigue ahí
-            showEvolutionContent(contentId, this);
+            // Asumimos que el onclick="showEvolutionContent('id', this)" sigue en el HTML
+            // Si no, necesitamos el ID de otra forma, por ejemplo, data-attributes
+            const onclickAttr = this.getAttribute('onclick');
+            if (onclickAttr) {
+                const contentIdMatch = onclickAttr.match(/'([^']+)'/);
+                if (contentIdMatch && contentIdMatch[1]) {
+                    showEvolutionContent(contentIdMatch[1], this);
+                }
+            }
         });
     });
 
-    // Active link en nav según scroll
     const sections = document.querySelectorAll("main section[id]");
     const navLi = document.querySelectorAll("nav ul li a");
     window.addEventListener("scroll", () => {
         let current = "";
         const headerHeight = document.querySelector('header').offsetHeight || 70;
         sections.forEach((section) => {
-            const sectionTop = section.offsetTop - headerHeight - 50; // 50px de offset adicional
+            const sectionTop = section.offsetTop - headerHeight - 50;
             if (pageYOffset >= sectionTop) {
                 current = section.getAttribute("id");
             }
         });
-
         navLi.forEach((a) => {
             a.classList.remove("active-link");
             if (a.getAttribute("href") === `#${current}`) {
@@ -223,27 +215,25 @@ function openModal(modal) {
     if (!modal) return;
     modal.style.display = "block";
     modal.setAttribute('aria-hidden', 'false');
-    // Enfocar el modal o su primer elemento enfocable para accesibilidad
     const focusable = modal.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
     if (focusable) focusable.focus();
-    document.body.style.overflow = 'hidden'; // Evitar scroll del fondo
+    document.body.style.overflow = 'hidden';
     playSound(sonidoClick);
-    setTimeout(() => modal.classList.add('is-visible'), 10); // Para la transición de opacidad
+    requestAnimationFrame(() => { // Usar rAF para asegurar que el display block se aplique antes de la clase
+        modal.classList.add('is-visible');
+    });
 }
 
 function closeModal(modal) {
     if (!modal) return;
     modal.classList.remove('is-visible');
     modal.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = ''; // Restaurar scroll
+    document.body.style.overflow = '';
     playSound(sonidoClick);
-    // Devolver el foco al elemento que abrió el modal si es posible/necesario
-    // (requiere guardar la referencia al trigger)
-    setTimeout(() => modal.style.display = "none", 300); // Esperar que termine la transición
+    modal.addEventListener('transitionend', () => {
+        modal.style.display = "none";
+    }, { once: true });
 }
-
-// Las siguientes funciones deben estar en el scope global si son llamadas por `onclick`
-// o asegurarse que los event listeners se añadan en DOMContentLoaded
 
 function cargarActividadesSimuladorSensorial() {
     const edadSelectSensorial = document.getElementById('sim-edad-sensorial');
@@ -269,6 +259,7 @@ function cargarActividadesSimuladorSensorial() {
       });
     }
 }
+// Hacerla global para que el select la llame al cambiar
 window.cargarActividadesSimuladorSensorial = cargarActividadesSimuladorSensorial;
 
 
@@ -361,7 +352,7 @@ window.showEvolutionContent = function(contentId, clickedButton) {
   if (clickedButton) clickedButton.classList.add('active');
 }
 
-function playSound(audioElement, volume = 0.3) { // Volumen más bajo por defecto para sonidos de UI
+function playSound(audioElement, volume = 0.3) {
   if (audioElement && typeof audioElement.play === 'function') {
     audioElement.currentTime = 0; 
     audioElement.volume = volume;
