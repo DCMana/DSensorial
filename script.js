@@ -30,32 +30,32 @@ const gestaltInfo = {
     "figura-fondo": {
         nombre: "Relación Figura-Fondo",
         explicacion: "Nuestra percepción organiza espontáneamente el campo visual en una 'figura' que destaca y un 'fondo' más difuso que la rodea. Este es uno de los primeros procesos organizativos de la percepción visual. En los niños, la capacidad de discriminar figura-fondo es esencial para tareas como encontrar un juguete específico en una caja llena o identificar letras en una palabra.",
-        imagen: "assets/gestalt_figura_fondo.png" // Asegúrate de que esta ruta sea correcta y el archivo exista
+        imagen: "gestalt_figura_fondo.png" // Asegúrate de que esta ruta sea correcta y el archivo exista
     },
     "proximidad": {
         nombre: "Principio de Proximidad",
         explicacion: "Tendemos a agrupar perceptualmente los elementos que están físicamente cercanos entre sí como si formaran una unidad. Para un niño, esto ayuda a ver grupos de objetos (ej. 'tres bloques juntos') en lugar de elementos aislados.",
-        imagen: "assets/gestalt_proximidad.png" // Asegúrate de que esta ruta sea correcta y el archivo exista
+        imagen: "gestalt_proximidad.png" // Asegúrate de que esta ruta sea correcta y el archivo exista
     },
     "similitud": {
         nombre: "Principio de Similitud",
         explicacion: "Agrupamos los elementos que son similares en características como forma, tamaño, color o textura. Un niño podría agrupar todos los bloques rojos, independientemente de su forma, gracias a este principio.",
-        imagen: "assets/gestalt_similitud.png" // Asegúrate de que esta ruta sea correcta y el archivo exista
+        imagen: "gestalt_similitud.png" // Asegúrate de que esta ruta sea correcta y el archivo exista
     },
     "continuidad": {
         nombre: "Principio de Continuidad (o Buena Continuación)",
         explicacion: "Los estímulos que guardan una continuidad de forma, dirección o patrón tienden a ser percibidos como una unidad, incluso si están interrumpidos. Esto ayuda a los niños a seguir líneas o caminos visuales, como el trazo de una letra o el contorno de un dibujo.",
-        imagen: "assets/gestalt_continuidad.png" // Asegúrate de que esta ruta sea correcta y el archivo exista
+        imagen: "gestalt_continuidad.png" // Asegúrate de que esta ruta sea correcta y el archivo exista
     },
     "simplicidad": {
         nombre: "Principio de Simplicidad (Prägnanz o Buena Forma)",
         explicacion: "Organizamos los campos perceptuales con los rasgos más simples, regulares, simétricos y estables posibles. Nuestra mente prefiere la interpretación más 'económica' y ordenada. Los niños tienden a simplificar formas complejas para entenderlas mejor.",
-        imagen: "assets/gestalt_simplicidad.png" // Asegúrate de que esta ruta sea correcta y el archivo exista
+        imagen: "gestalt_simplicidad.png" // Asegúrate de que esta ruta sea correcta y el archivo exista
     },
     "cierre": {
         nombre: "Principio de Cierre",
         explicacion: "Nuestra mente tiende a completar las figuras incompletas o fragmentadas para darles sentido y percibirlas como totalidades. Un niño puede reconocer un dibujo de un animal aunque falten algunas líneas, gracias a este principio.",
-        imagen: "assets/gestalt_cierre.png" // Asegúrate de que esta ruta sea correcta y el archivo exista
+        imagen: "gestalt_cierre.png" // Asegúrate de que esta ruta sea correcta y el archivo exista
     }
 };
 
