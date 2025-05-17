@@ -1,3 +1,11 @@
+/* Contenido del style.css proporcionado en la respuesta anterior. 
+   Asegúrate de que las rutas a fuentes o imágenes dentro del CSS sean correctas 
+   si las tuvieras (ej. background-image: url('assets/fondo.png');).
+   En este caso, no hay rutas de imagen directas en el CSS que proporcioné.
+   Las principales modificaciones para móvil están en el media query @media (max-width: 767px) 
+   para el menú hamburguesa.
+*/
+
 :root {
   --primary-color: #87CEEB; 
   --secondary-color: #FF69B4; 
