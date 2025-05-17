@@ -3,16 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Desarrollo Sensorial</title>
-  <link rel="stylesheet" href="Style.css"> <!-- Asumiendo que style.css está en la raíz -->
+  <title>El Universo Sensorial Infantil: Guía Interactiva</title> <!-- Título más descriptivo -->
+  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Considerar un favicon -->
+  <link rel="icon" href="assets/favicon_placeholder.ico" type="image/x-icon">
 </head>
 <body>
   <header>
     <div class="header-container">
         <div class="logo-area">
-            <svg class="header-svg" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+            <svg class="header-svg" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-label="Logotipo de Universo Sensorial Infantil">
                 <circle cx="25" cy="25" r="23" fill="url(#gradLogo)"/>
                 <defs>
                     <radialGradient id="gradLogo" cx="0.5" cy="0.5" r="0.7">
@@ -24,11 +26,12 @@
             </svg>
             <h1 class="brand-title">Universo Sensorial Infantil</h1>
         </div>
-        <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav-list">
+        <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="main-nav-list">
             <i class="fas fa-bars" aria-hidden="true"></i>
+            <span class="sr-only">Menú</span> <!-- Para lectores de pantalla -->
         </button>
-        <nav id="main-nav" class="main-nav">
-          <ul id="main-nav-list"> <!-- ID para aria-controls -->
+        <nav id="main-nav" class="main-nav" aria-label="Navegación principal">
+          <ul id="main-nav-list">
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#conceptos">Conceptos</a></li>
             <li><a href="#gestalt">Teoría Gestalt</a></li>
@@ -37,43 +40,47 @@
             <li><a href="#alteraciones">Alteraciones</a></li>
             <li><a href="#estimulacion">Estimulación (0-3a)</a></li>
             <li><a href="#simulador">Simulador</a></li>
+			<li><a href="#recursos">Recursos</a></li>
           </ul>
         </nav>
     </div>
-    <p class="subtitle">Descubriendo el Mundo a Través de los Sentidos</p>
+    <p class="subtitle">Descubriendo el Mundo a Través de los Sentidos: Una Aventura Fundamental</p>
   </header>
 
   <main>
-    <!-- SECCIÓN INICIO (Sin cambios estructurales significativos) -->
     <section id="inicio" class="fade-in content-padding">
       <h2>Bienvenido/a a la Exploración del Desarrollo Sensorial</h2>
       <div class="section-content two-column-layout">
         <div class="text-content">
-          <p>Desde el primer instante, los niños y niñas comienzan a explorar el mundo a través de sus sentidos. Este <strong>desarrollo sensorial</strong> es un viaje asombroso y fundamental, donde cada nueva sensación construye los cimientos de su aprendizaje.</p>
-          <p>Esta guía interactiva te ayudará a acompañar a estos pequeños exploradores. Aquí encontrarás:</p>
+          <p>Desde el primer instante de vida, incluso antes de nacer, los niños y niñas comienzan un viaje fascinante: explorar y comprender el mundo a través de sus sentidos. Este <strong>desarrollo sensorial</strong> no es un mero pasatiempo, sino el cimiento sobre el cual se construyen el aprendizaje, el desarrollo cognitivo, motor, y socioemocional.</p>
+          <p>Esta guía interactiva ha sido diseñada para acompañarle en la comprensión de este proceso vital. Aquí encontrará, de forma clara y aplicada:</p>
           <ul>
-            <li>Qué son la <strong>sensación</strong> y la <strong>percepción</strong>.</li>
-            <li>Cómo teorías como la <strong>Gestalt</strong> explican la percepción.</li>
-            <li>El funcionamiento y desarrollo de <strong>los cinco sentidos</strong>.</li>
-            <li>Su evolución desde la etapa prenatal.</li>
-            <li>Información sobre <strong>alteraciones sensoriales</strong> y ayudas.</li>
-            <li>Ideas para la <strong>estimulación sensorial</strong> (0-3 años).</li>
+            <li>Una distinción clara entre <strong>sensación</strong> (la recepción de estímulos) y <strong>percepción</strong> (la interpretación de dichos estímulos).</li>
+            <li>Cómo teorías fundamentales como la <strong>Gestalt</strong> nos ayudan a entender la organización perceptual.</li>
+            <li>Un recorrido por el funcionamiento y desarrollo de <strong>los cinco sentidos tradicionales</strong> (vista, oído, tacto, gusto, olfato) y la importancia de los "sentidos internos" como el <strong>propioceptivo</strong> y <strong>vestibular</strong>.</li>
+            <li>La <strong>evolución detallada</strong> de estas capacidades desde la etapa prenatal hasta los primeros años.</li>
+            <li>Información esencial sobre <strong>alteraciones sensoriales</strong> comunes y las ayudas técnicas y estrategias de apoyo disponibles.</li>
+            <li>Ideas prácticas y fundamentadas para la <strong>estimulación sensorial temprana</strong> (0-3 años), fomentando el juego como motor de aprendizaje.</li>
           </ul>
-          <p>Fomentar el desarrollo sensorial abre puertas a un crecimiento cognitivo, motor y emocional más pleno. ¡Descubre cómo los sentidos tejen la experiencia infantil!</p>
+          <p>Fomentar un desarrollo sensorial rico y adecuado es abrir un universo de posibilidades para los más pequeños, permitiéndoles construir una relación más plena y significativa con su entorno. ¡Acompáñenos a descubrir cómo los sentidos tejen la maravillosa experiencia infantil!</p>
         </div>
         <div class="image-content">
-          <svg viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg" class="decorative-svg anim-svg-float">
-            <circle cx="100" cy="90" r="70" fill="url(#gradFondoInicio)"/>
-            <defs>
-                <radialGradient id="gradFondoInicio" cx="0.5" cy="0.5" r="0.7">
-                    <stop offset="0%" stop-color="rgba(255, 223, 186, 0.5)"/>
-                    <stop offset="100%" stop-color="rgba(173, 216, 230, 0.3)"/>
-                </radialGradient>
-            </defs>
-            <g class="svg-sense-icon" transform="translate(70 70) scale(1.2)"><ellipse cx="0" cy="0" rx="15" ry="8" fill="#fff" stroke="#555" stroke-width="1"/><circle cx="0" cy="0" r="4" fill="#5bc0de"/><circle cx="0" cy="0" r="1.5" fill="#222"/></g>
-            <g class="svg-sense-icon" transform="translate(100 130) scale(0.8) rotate(15)"><path d="M-15-5 Q-20-15 -10-20 Q0-25 10-20 Q20-15 15-5 L10 15 Q0 20 -10 15 Z" fill="#ffb347" opacity="0.8"/></g>
-             <text x="50%" y="25" dominant-baseline="middle" text-anchor="middle" font-family="Pacifico" font-size="18" fill="#ff6347">¡Sentir es Crecer!</text>
-          </svg>
+          <figure>
+            <svg viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg" class="decorative-svg anim-svg-float" aria-labelledby="svgInicioTitle">
+              <title id="svgInicioTitle">Ilustración abstracta sobre el desarrollo sensorial</title>
+              <circle cx="100" cy="90" r="70" fill="url(#gradFondoInicio)"/>
+              <defs>
+                  <radialGradient id="gradFondoInicio" cx="0.5" cy="0.5" r="0.7">
+                      <stop offset="0%" stop-color="rgba(255, 223, 186, 0.5)"/>
+                      <stop offset="100%" stop-color="rgba(173, 216, 230, 0.3)"/>
+                  </radialGradient>
+              </defs>
+              <g class="svg-sense-icon" transform="translate(70 70) scale(1.2)" aria-label="Icono de ojo"><ellipse cx="0" cy="0" rx="15" ry="8" fill="#fff" stroke="#555" stroke-width="1"/><circle cx="0" cy="0" r="4" fill="#5bc0de"/><circle cx="0" cy="0" r="1.5" fill="#222"/></g>
+              <g class="svg-sense-icon" transform="translate(100 130) scale(0.8) rotate(15)" aria-label="Icono de oreja"><path d="M-15-5 Q-20-15 -10-20 Q0-25 10-20 Q20-15 15-5 L10 15 Q0 20 -10 15 Z" fill="#ffb347" opacity="0.8"/></g>
+               <text x="50%" y="25" dominant-baseline="middle" text-anchor="middle" font-family="Pacifico" font-size="18" fill="#ff6347">¡Sentir es Crecer!</text>
+            </svg>
+            <figcaption class="sr-only">Ilustración decorativa con iconos de sentidos y el lema "¡Sentir es Crecer!".</figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -81,269 +88,451 @@
     <!-- SECCIÓN CONCEPTOS (Botón para modal) -->
     <section id="conceptos" class="slide-up content-padding">
       <h2>Sensación y Percepción: Descifrando el Mundo</h2>
-      <p class="section-intro">Son dos pasos distintos: la sensación es el primer contacto, la percepción es darle sentido.</p>
+      <p class="section-intro">Para comprender el desarrollo sensorial, es crucial distinguir dos procesos íntimamente ligados pero distintos: la sensación, nuestro primer contacto con el entorno, y la percepción, la forma en que nuestro cerebro le da sentido a ese contacto.</p>
       <div class="concept-columns">
         <div class="concept-card anim-pop-in">
-          <h3><span class="concept-icon">⚡</span>Sensación: El Primer Contacto</h3>
-          <p>Es la <strong>detección inicial</strong> de un estímulo (luz, sonido, olor) por nuestros sentidos. Un proceso fisiológico y automático.</p>
+          <h3><span class="concept-icon" aria-hidden="true">⚡</span>Sensación: El Primer Contacto</h3>
+          <p>Es la <strong>detección inicial y registro</strong> de un estímulo (luz, sonido, olor, presión, temperatura) por nuestros órganos sensoriales. Un proceso fundamentalmente fisiológico, automático e inconsciente, donde los receptores sensoriales convierten la energía del estímulo en impulsos nerviosos.</p>
         </div>
         <div class="concept-card anim-pop-in" style="animation-delay: 0.1s;">
-          <h3><span class="concept-icon">🧠</span>Percepción: Dando Sentido</h3>
-          <p>Es el proceso de <strong>organizar e interpretar</strong> las sensaciones. Implica conciencia y se ve afectada por la experiencia y el contexto.</p>
+          <h3><span class="concept-icon" aria-hidden="true">🧠</span>Percepción: Dando Sentido</h3>
+          <p>Es el proceso activo de <strong>organizar, interpretar y dar significado</strong> a la información sensorial recibida. Implica la conciencia, la memoria y la experiencia previa. Es aquí donde "un conjunto de ondas lumínicas" se convierte en "la cara de mamá".</p>
         </div>
       </div>
-       <button class="action-button modal-trigger" data-modal-target="modal-sensacion-percepcion">Leer más sobre Sensación y Percepción</button>
+       <button class="action-button modal-trigger" data-modal-target="modal-sensacion-percepcion">Profundizar en Sensación y Percepción</button>
     </section>
+	
 
     <!-- SECCIÓN GESTALT (Tarjetas disparan modal) -->
     <section id="gestalt" class="fade-in content-padding">
       <h2>Teoría de la Gestalt: Viendo el Panorama Completo</h2>
-      <p class="section-intro">La Gestalt explica cómo nuestra mente organiza la información sensorial en "todos" significativos.</p>
+      <p class="section-intro">La Psicología de la Gestalt, nacida en Alemania, nos ofrece principios valiosísimos para entender cómo nuestra mente organiza instintivamente la información sensorial en "todos" significativos y coherentes, en lugar de procesar piezas aisladas. "El todo es más que la suma de las partes" es su lema central.</p>
       <div class="cards">
-        <div class="card modal-trigger" data-modal-target="modal-gestalt" data-gestalt-key="figura-fondo"><h3>Figura y Fondo</h3><p>Distinguimos un objeto del fondo.</p></div>
-        <div class="card modal-trigger" data-modal-target="modal-gestalt" data-gestalt-key="proximidad"><h3>Proximidad</h3><p>Agrupamos lo cercano.</p></div>
-        <div class="card modal-trigger" data-modal-target="modal-gestalt" data-gestalt-key="similitud"><h3>Similitud</h3><p>Unimos lo parecido.</p></div>
-        <div class="card modal-trigger" data-modal-target="modal-gestalt" data-gestalt-key="direccion"><h3>Continuidad</h3><p>Seguimos patrones.</p></div>
-        <div class="card modal-trigger" data-modal-target="modal-gestalt" data-gestalt-key="simplicidad"><h3>Buena Forma</h3><p>Preferimos lo simple.</p></div>
-        <div class="card modal-trigger" data-modal-target="modal-gestalt" data-gestalt-key="cierre"><h3>Cierre</h3><p>Completamos figuras.</p></div>
+        <div class="card modal-trigger" data-modal-target="modal-gestalt" data-gestalt-key="figura-fondo" tabindex="0"><h3>Figura y Fondo</h3><p>Distinguimos un objeto (figura) que resalta sobre un entorno (fondo).</p></div>
+        <div class="card modal-trigger" data-modal-target="modal-gestalt" data-gestalt-key="proximidad" tabindex="0"><h3>Proximidad</h3><p>Agrupamos elementos que están cercanos entre sí.</p></div>
+        <div class="card modal-trigger" data-modal-target="modal-gestalt" data-gestalt-key="similitud" tabindex="0"><h3>Similitud</h3><p>Unimos elementos que son parecidos en forma, color o tamaño.</p></div>
+        <div class="card modal-trigger" data-modal-target="modal-gestalt" data-gestalt-key="continuidad" tabindex="0"><h3>Continuidad</h3><p>Percibimos líneas o patrones continuos aunque estén interrumpidos.</p></div>
+        <div class="card modal-trigger" data-modal-target="modal-gestalt" data-gestalt-key="simplicidad" tabindex="0"><h3>Simplicidad (Buena Forma)</h3><p>Preferimos las interpretaciones más simples y estables.</p></div>
+        <div class="card modal-trigger" data-modal-target="modal-gestalt" data-gestalt-key="cierre" tabindex="0"><h3>Cierre</h3><p>Nuestra mente tiende a completar figuras incompletas.</p></div>
       </div>
     </section>
+
 
     <!-- SECCIÓN LOS SENTIDOS (Acordeones y botón para modal con más detalle) -->
     <section id="sentidos" class="slide-up content-padding">
-      <h2>Los Cinco Sentidos: Nuestras Antenas al Mundo</h2>
-      <p class="section-intro">Cada sentido es una ventana especializada. Exploremos brevemente cómo funciona cada uno.</p>
+      <h2>Los Sentidos: Nuestras Ventanas al Mundo</h2>
+      <p class="section-intro">Cada sentido es una puerta especializada a través de la cual recibimos información vital. Aunque tradicionalmente hablamos de cinco, es importante considerar también los sentidos internos.</p>
       <div class="accordion-container">
         <div class="accordion-item">
-          <button class="accordion-header" aria-expanded="false"><span class="sense-icon">👅</span>El Gusto</button>
-          <div class="accordion-content" aria-hidden="true"><p>Identifica sabores (dulce, salado, ácido, amargo, umami) mediante las papilas gustativas. El olfato es su gran aliado.</p></div>
+          <button class="accordion-header" aria-expanded="false" aria-controls="content-gusto"><span class="sense-icon" aria-hidden="true">👅</span>El Gusto (Sentido Gustativo)</button>
+          <div class="accordion-content" id="content-gusto" aria-hidden="true"><p>Detecta sustancias químicas disueltas en la saliva a través de las papilas gustativas en la lengua. Identifica sabores básicos: dulce, salado, ácido, amargo y <strong>umami</strong> (sabroso). El olfato juega un papel crucial en la percepción completa del sabor.</p></div>
         </div>
         <div class="accordion-item">
-          <button class="accordion-header" aria-expanded="false"><span class="sense-icon">👃</span>El Olfato</button>
-          <div class="accordion-content" aria-hidden="true"><p>Capta moléculas aromáticas a través del epitelio olfatorio. Ligado a emociones y memoria.</p></div>
+          <button class="accordion-header" aria-expanded="false" aria-controls="content-olfato"><span class="sense-icon" aria-hidden="true">👃</span>El Olfato (Sentido Olfativo)</button>
+          <div class="accordion-content" id="content-olfato" aria-hidden="true"><p>Capta partículas aromáticas volátiles presentes en el aire a través de receptores en el epitelio olfatorio, situado en la parte superior de la cavidad nasal. Está íntimamente ligado a las emociones y la memoria (sistema límbico).</p></div>
         </div>
         <div class="accordion-item">
-          <button class="accordion-header" aria-expanded="false"><span class="sense-icon">👁️</span>La Vista</button>
-          <div class="accordion-content" aria-hidden="true"><p>Traduce la luz en imágenes. Conos para colores, bastones para luz tenue. La acomodación enfoca.</p></div>
+          <button class="accordion-header" aria-expanded="false" aria-controls="content-vista"><span class="sense-icon" aria-hidden="true">👁️</span>La Vista (Sentido Visual)</button>
+          <div class="accordion-content" id="content-vista" aria-hidden="true"><p>Interpreta la luz reflejada por los objetos para formar imágenes. Implica estructuras complejas como la córnea, el cristalino (que permite la acomodación o enfoque) y la retina, donde los conos (color y detalle) y bastones (luz tenue) transforman la luz en señales nerviosas.</p></div>
         </div>
          <div class="accordion-item">
-          <button class="accordion-header" aria-expanded="false"><span class="sense-icon">👂</span>La Audición</button>
-          <div class="accordion-content" aria-hidden="true"><p>Percibe ondas sonoras y contribuye al equilibrio. Del tímpano a los huesecillos y luego a la cóclea.</p></div>
+          <button class="accordion-header" aria-expanded="false" aria-controls="content-audicion"><span class="sense-icon" aria-hidden="true">👂</span>La Audición (Sentido Auditivo)</button>
+          <div class="accordion-content" id="content-audicion" aria-hidden="true"><p>Percibe vibraciones (ondas sonoras) transmitidas por el aire u otros medios. El oído externo canaliza el sonido, el oído medio lo amplifica (tímpano y huesecillos: martillo, yunque, estribo) y el oído interno (cóclea) lo convierte en impulsos nerviosos. También contribuye al equilibrio (sistema vestibular).</p></div>
         </div>
         <div class="accordion-item">
-          <button class="accordion-header" aria-expanded="false"><span class="sense-icon">🖐️</span>El Tacto</button>
-          <div class="accordion-content" aria-hidden="true"><p>Siente presión, temperatura, dolor y texturas a través de receptores en la piel (epidermis y dermis).</p></div>
+          <button class="accordion-header" aria-expanded="false" aria-controls="content-tacto"><span class="sense-icon" aria-hidden="true">🖐️</span>El Tacto (Sentido Táctil)</button>
+          <div class="accordion-content" id="content-tacto" aria-hidden="true"><p>Detecta presión, vibración, temperatura, dolor y texturas a través de múltiples receptores nerviosos distribuidos por toda la piel (epidermis y dermis). Es fundamental para la exploración, el vínculo afectivo y la protección.</p></div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false" aria-controls="content-propioceptivo"><span class="sense-icon" aria-hidden="true">🤸</span>Sentido Propioceptivo</button>
+          <div class="accordion-content" id="content-propioceptivo" aria-hidden="true"><p>A menudo llamado el "sentido de la posición corporal". Nos informa sobre la posición y movimiento de nuestras partes del cuerpo sin necesidad de mirarlas. Los receptores se encuentran en músculos, tendones y articulaciones. Esencial para la coordinación y el esquema corporal.</p></div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false" aria-controls="content-vestibular"><span class="sense-icon" aria-hidden="true">⚖️</span>Sentido Vestibular</button>
+          <div class="accordion-content" id="content-vestibular" aria-hidden="true"><p>Localizado en el oído interno, es el responsable del equilibrio, la orientación espacial y la coordinación del movimiento con la información visual. Nos permite saber si estamos quietos o en movimiento, y mantener la postura.</p></div>
         </div>
       </div>
-      <button class="action-button modal-trigger" data-modal-target="modal-detalle-sentidos">Conoce más sobre cada Sentido</button>
+      <button class="action-button modal-trigger" data-modal-target="modal-detalle-sentidos">Explorar los Sentidos en Profundidad</button>
     </section>
+	
 
     <!-- SECCIÓN EVOLUCIÓN (Acordeones y botón para modal) -->
     <section id="evolucion" class="fade-in content-padding">
-      <h2>Evolución Sensorial: Un Desarrollo Continuo</h2>
-      <p class="section-intro">Los sentidos se desarrollan gradualmente, desde el útero. Conocer esta progresión nos ayuda a entender las capacidades infantiles.</p>
+      <h2>Evolución Sensorial: Un Desarrollo Continuo y Asombroso</h2>
+      <p class="section-intro">Los sentidos no aparecen completamente maduros al nacer. Su desarrollo es un proceso gradual y fascinante que comienza en el útero materno y continúa intensamente durante los primeros años. Conocer esta progresión es clave para entender las capacidades y necesidades de los niños en cada etapa.</p>
       <div class="accordion-container">
         <div class="accordion-item">
-          <button class="accordion-header" aria-expanded="false">Desarrollo Prenatal: ¡Ya Perciben!</button>
-          <div class="accordion-content" aria-hidden="true"><p>En el útero, el feto ya experimenta con el gusto, olfato, audición, vista (limitada) y tacto. Estas experiencias tempranas son cruciales.</p></div>
+          <button class="accordion-header" aria-expanded="false" aria-controls="content-prenatal">Desarrollo Prenatal: ¡Percibiendo Desde el Vientre!</button>
+          <div class="accordion-content" id="content-prenatal" aria-hidden="true">
+            <p>Ya en el útero, el feto es un ser sensorial activo:</p>
+            <ul>
+                <li><strong>Tacto:</strong> Es el primer sentido en desarrollarse. El feto siente el contacto con las paredes uterinas y su propio cuerpo.</li>
+                <li><strong>Gusto y Olfato:</strong> A través del líquido amniótico, experimenta sabores y olores que influirán en sus preferencias futuras.</li>
+                <li><strong>Audición:</strong> Hacia el final del segundo trimestre, el feto oye sonidos internos (corazón de la madre) y externos (voces, música), mostrando preferencia por la voz materna.</li>
+                <li><strong>Vista:</strong> Aunque limitada, puede percibir cambios de luz a través del abdomen materno.</li>
+            </ul>
+          </div>
         </div>
         <div class="accordion-item">
-          <button class="accordion-header" aria-expanded="false">Percepción Visual (0-6+ meses)</button>
-          <div class="accordion-content" aria-hidden="true"><p>Al nacer, la vista es el sentido menos maduro. Mejora el enfoque, seguimiento de objetos, reconocimiento de rostros y percepción de colores y profundidad gradualmente.</p></div>
+          <button class="accordion-header" aria-expanded="false" aria-controls="content-visual-evo">Percepción Visual (0-12+ meses)</button>
+          <div class="accordion-content" id="content-visual-evo" aria-hidden="true">
+            <p>Al nacer, la vista es el sentido menos maduro, pero evoluciona rápidamente:</p>
+            <ul>
+                <li><strong>0-1 mes:</strong> Visión borrosa, enfoca mejor a 20-30 cm (distancia cara-pecho al amamantar). Atraído por contrastes fuertes (blanco/negro), rostros y luces. Sigue objetos lentamente.</li>
+                <li><strong>2-3 meses:</strong> Mejora el seguimiento visual y la convergencia binocular. Comienza a distinguir algunos colores primarios. Sonríe ante rostros familiares.</li>
+                <li><strong>4-6 meses:</strong> Percepción de profundidad incipiente. Mayor agudeza visual, ve más detalles y colores. Explora sus manos.</li>
+                <li><strong>6-12 meses:</strong> Visión del color casi como un adulto. Mejora la coordinación ojo-mano. Reconoce objetos y personas a distancia.</li>
+            </ul>
+          </div>
         </div>
         <div class="accordion-item">
-          <button class="accordion-header" aria-expanded="false">Percepción Auditiva (Recién Nacido+)</button>
-          <div class="accordion-content" aria-hidden="true"><p>Bien desarrollada al nacer. Los bebés reconocen voces (especialmente la materna), se calman con sonidos rítmicos y localizan sonidos.</p></div>
+          <button class="accordion-header" aria-expanded="false" aria-controls="content-auditiva-evo">Percepción Auditiva (Recién Nacido+)</button>
+          <div class="accordion-content" id="content-auditiva-evo" aria-hidden="true"><p>Funcional desde el nacimiento. Los bebés reconocen y prefieren la voz materna, se calman con sonidos rítmicos y se sobresaltan con ruidos fuertes. Localizan la fuente del sonido girando la cabeza. Distinguen fonemas de diferentes idiomas.</p></div>
         </div>
         <div class="accordion-item">
-          <button class="accordion-header" aria-expanded="false">Tacto, Gusto y Olfato (Recién Nacido+)</button>
-          <div class="accordion-content" aria-hidden="true"><p>Estos sentidos son vitales desde el nacimiento para la supervivencia y el vínculo. Reconocen olores y sabores básicos, y el tacto es un lenguaje primordial.</p></div>
+          <button class="accordion-header" aria-expanded="false" aria-controls="content-otros-evo">Tacto, Gusto y Olfato (Recién Nacido+)</button>
+          <div class="accordion-content" id="content-otros-evo" aria-hidden="true"><p>Estos sentidos están bien desarrollados al nacer. El <strong>tacto</strong> es crucial para el vínculo y la exploración (especialmente oral). El <strong>olfato</strong> les permite reconocer a su madre. El <strong>gusto</strong> les hace preferir lo dulce (leche materna) y rechazar lo amargo. Hacia los 4-6 meses pueden empezar a aceptar sabores salados.</p></div>
         </div>
       </div>
-      <button class="action-button modal-trigger" data-modal-target="modal-detalle-evolucion">Ver Detalles de la Evolución Sensorial</button>
+      <button class="action-button modal-trigger" data-modal-target="modal-detalle-evolucion">Ver Hitos Detallados de la Evolución Sensorial</button>
     </section>
 
     <!-- SECCIÓN ALTERACIONES (Acordeones y botones para modales) -->
     <section id="alteraciones" class="slide-up content-padding">
-        <h2>Alteraciones Sensoriales y Apoyos</h2>
-        <p class="section-intro">Conocer los desafíos sensoriales y las ayudas disponibles es clave para un apoyo adecuado.</p>
+        <h2>Alteraciones Sensoriales y Apoyos Esenciales</h2>
+        <p class="section-intro">Algunos niños pueden presentar desafíos en el procesamiento de la información sensorial. La detección temprana y el apoyo adecuado son fundamentales para su desarrollo y bienestar. Es importante recordar que cada niño es único y requerirá un plan individualizado.</p>
         <div class="accordion-container">
             <div class="accordion-item">
-                <button class="accordion-header" aria-expanded="false"><span class="sense-icon">🔇</span>Desafíos en la Audición</button>
-                <div class="accordion-content" aria-hidden="true"><p>La deficiencia auditiva varía de leve a total. Afecta el desarrollo del lenguaje.</p> <button class="action-button-inline modal-trigger" data-modal-target="modal-ayudas-auditivas">Ver Ayudas Auditivas</button></div>
+                <button class="accordion-header" aria-expanded="false" aria-controls="content-auditivas-alt"><span class="sense-icon" aria-hidden="true">🔇</span>Desafíos en la Audición (Hipoacusia)</button>
+                <div class="accordion-content" id="content-auditivas-alt" aria-hidden="true"><p>La pérdida auditiva (hipoacusia) puede variar en grado (leve, moderada, severa, profunda, cofosis) y tipo (conductiva, neurosensorial, mixta). Afecta significativamente el desarrollo del lenguaje y la comunicación. La detección precoz (cribado neonatal) es vital.</p> <button class="action-button-inline modal-trigger" data-modal-target="modal-ayudas-auditivas">Ver Ayudas y Comunicación Auditiva</button></div>
             </div>
             <div class="accordion-item">
-                <button class="accordion-header" aria-expanded="false"><span class="sense-icon">🦯</span>Desafíos en la Visión</button>
-                <div class="accordion-content" aria-hidden="true"><p>La deficiencia visual abarca desde baja visión a ceguera. Se evalúa por agudeza y campo visual.</p> <button class="action-button-inline modal-trigger" data-modal-target="modal-ayudas-visuales">Ver Ayudas Visuales</button></div>
+                <button class="accordion-header" aria-expanded="false" aria-controls="content-visuales-alt"><span class="sense-icon" aria-hidden="true">🦯</span>Desafíos en la Visión</button>
+                <div class="accordion-content" id="content-visuales-alt" aria-hidden="true"><p>La deficiencia visual abarca desde baja visión (dificultad para ver incluso con corrección) hasta ceguera. Se evalúa por agudeza visual (capacidad de ver detalles) y campo visual (área visible). Puede ser congénita o adquirida.</p> <button class="action-button-inline modal-trigger" data-modal-target="modal-ayudas-visuales">Ver Ayudas y Adaptaciones Visuales</button></div>
             </div>
             <div class="accordion-item">
-                <button class="accordion-header" aria-expanded="false"><span class="sense-icon">🧏</span><span class="sense-icon">🦯</span>Sordoceguera</button> <!-- Podrías usar un solo ícono si prefieres -->
-                <div class="accordion-content" aria-hidden="true"><p>Combina deficiencias visuales y auditivas. Requiere sistemas de comunicación adaptados como el dactilológico en palma.</p></div>
+                <button class="accordion-header" aria-expanded="false" aria-controls="content-sordoceguera-alt"><span class="sense-icon" aria-hidden="true">🧏</span><span class="sense-icon" aria-hidden="true">🦯</span>Sordoceguera</button>
+                <div class="accordion-content" id="content-sordoceguera-alt" aria-hidden="true"><p>Es una discapacidad única que combina deficiencias visuales y auditivas de grado variable. Requiere sistemas de comunicación altamente adaptados y especializados, como el sistema dactilológico en palma, Braille táctil, y otros métodos individualizados.</p></div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header" aria-expanded="false" aria-controls="content-tps-alt"><span class="sense-icon" aria-hidden="true">🧩</span>Trastorno del Procesamiento Sensorial (TPS)</button>
+                <div class="accordion-content" id="content-tps-alt" aria-hidden="true"><p>El TPS (también conocido como Disfunción de Integración Sensorial) es una condición en la que el cerebro tiene dificultades para recibir y responder a la información que llega a través de los sentidos. Puede manifestarse como hipersensibilidad (reacción exagerada a estímulos) o hiposensibilidad (búsqueda o poca reacción a estímulos), y afectar a uno o varios sentidos, incluyendo el propioceptivo y vestibular. Requiere evaluación y terapia ocupacional especializada.</p></div>
             </div>
         </div>
     </section>
 
     <!-- SECCIÓN ESTIMULACIÓN (Acordeones y botón para modal) -->
     <section id="estimulacion" class="fade-in content-padding">
-      <h2>Estimulación Sensorial (0-3 Años): Jugando para Crecer</h2>
-      <p class="section-intro">Ofrecer experiencias sensoriales variadas y adecuadas a la edad es fundamental para acompañar la curiosidad natural del niño.</p>
+      <h2>Estimulación Sensorial (0-3 Años): Jugando para Aprender y Crecer</h2>
+      <p class="section-intro">Ofrecer un entorno rico en experiencias sensoriales variadas, seguras y adecuadas a la edad es fundamental para nutrir la curiosidad natural del niño y potenciar su desarrollo integral. La estimulación no es "entrenamiento", sino ofrecer oportunidades para explorar y descubrir.</p>
        <div class="accordion-container">
             <div class="accordion-item">
-                <button class="accordion-header" aria-expanded="false"><span class="sense-icon">🎯</span>Objetivos Clave</button>
-                <div class="accordion-content" aria-hidden="true"><p>Mejorar fijación visual, discriminación auditiva, reconocimiento táctil, discriminación de olores y sabores.</p></div>
+                <button class="accordion-header" aria-expanded="false" aria-controls="content-objetivos-estim"><span class="sense-icon" aria-hidden="true">🎯</span>Principios y Objetivos Clave</button>
+                <div class="accordion-content" id="content-objetivos-estim" aria-hidden="true">
+                  <p><strong>Principios:</strong> Seguir el ritmo del niño, crear un ambiente seguro y de confianza, utilizar el juego como vehículo, observar y responder a sus intereses, ser gradual y repetitivo pero variado.</p>
+                  <p><strong>Objetivos Generales:</strong> Mejorar la fijación y seguimiento visual, la discriminación y localización auditiva, el reconocimiento de texturas y formas mediante el tacto, la discriminación de olores y sabores básicos, y desarrollar la conciencia corporal (propiocepción) y el equilibrio (vestibular).</p>
+                </div>
             </div>
             <div class="accordion-item">
-                <button class="accordion-header" aria-expanded="false"><span class="sense-icon">🍓</span><span class="sense-icon">🌸</span>Ideas para Gusto y Olfato</button>
-                <div class="accordion-content" aria-hidden="true"><p>Explorar alimentos seguros, juegos de "adivinar el olor" con botes (especias, flores), probar sabores contrastantes.</p></div>
+                <button class="accordion-header" aria-expanded="false" aria-controls="content-gusto-olfato-estim"><span class="sense-icon" aria-hidden="true">🍓</span><span class="sense-icon" aria-hidden="true">🌸</span>Ideas para Gusto y Olfato</button>
+                <div class="accordion-content" id="content-gusto-olfato-estim" aria-hidden="true"><p>Explorar alimentos seguros con diferentes texturas y sabores (introducción gradual), juegos de "adivinar el olor" con botes que contengan especias suaves, frutas, flores (siempre seguro y supervisado). Comentar los olores y sabores.</p></div>
             </div>
             <div class="accordion-item">
-                <button class="accordion-header" aria-expanded="false"><span class="sense-icon">🖼️</span>Ideas para la Vista</button>
-                <div class="accordion-content" aria-hidden="true"><p>Móviles con contrastes, juguetes con caras, libros coloridos, juegos de luces (supervisado), bloques.</p></div>
+                <button class="accordion-header" aria-expanded="false" aria-controls="content-vista-estim"><span class="sense-icon" aria-hidden="true">🖼️</span>Ideas para la Vista</button>
+                <div class="accordion-content" id="content-vista-estim" aria-hidden="true"><p>Móviles con contrastes (blanco/negro, colores primarios), juguetes con caras, libros de tela y luego de cartón con imágenes coloridas y claras, juegos de luces suaves (linternas, proyectores, siempre supervisado), bloques de construcción, seguir pompas de jabón.</p></div>
             </div>
             <div class="accordion-item">
-                <button class="accordion-header" aria-expanded="false"><span class="sense-icon">🎶</span>Ideas para la Audición</button>
-                <div class="accordion-content" aria-hidden="true"><p>Hablar y cantar, música variada, sonajeros, instrumentos sencillos, identificar sonidos del entorno.</p></div>
+                <button class="accordion-header" aria-expanded="false" aria-controls="content-audicion-estim"><span class="sense-icon" aria-hidden="true">🎶</span>Ideas para la Audición</button>
+                <div class="accordion-content" id="content-audicion-estim" aria-hidden="true"><p>Hablar, cantar y leer al niño con expresividad, música variada (clásica, infantil, del mundo), sonajeros, instrumentos musicales sencillos (maracas, tambores, xilófonos), identificar sonidos del entorno (animales, vehículos, casa).</p></div>
             </div>
             <div class="accordion-item">
-                <button class="accordion-header" aria-expanded="false"><span class="sense-icon">🤲</span>Ideas para el Tacto</button>
-                <div class="accordion-content" aria-hidden="true"><p>Masajes, contacto piel con piel, juguetes con texturas, jugar con arena/agua (supervisado), plastilina, cajas sensoriales.</p></div>
+                <button class="accordion-header" aria-expanded="false" aria-controls="content-tacto-estim"><span class="sense-icon" aria-hidden="true">🤲</span>Ideas para el Tacto</button>
+                <div class="accordion-content" id="content-tacto-estim" aria-hidden="true"><p>Masajes suaves, contacto piel con piel, juguetes con diferentes texturas (suave, rugoso, liso, frío, cálido), jugar con arena/agua/tierra (supervisado y seguro), plastilina casera, pintura de dedos, cajas sensoriales con arroz, legumbres, pasta.</p></div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header" aria-expanded="false" aria-controls="content-prop-vest-estim"><span class="sense-icon" aria-hidden="true">🤸</span><span class="sense-icon" aria-hidden="true">⚖️</span>Ideas para Propiocepción y Vestibular</button>
+                <div class="accordion-content" id="content-prop-vest-estim" aria-hidden="true"><p>Juegos de movimiento: mecer suavemente, dar vueltas controladas, columpiarse, reptar, gatear por diferentes superficies, trepar (adaptado y seguro), juegos de empujar/tirar objetos ligeros, llevar "peso" (mochila pequeña vacía), saltar en charcos o sobre cojines.</p></div>
             </div>
         </div>
-        <button class="action-button modal-trigger" data-modal-target="modal-detalle-estimulacion">Ver Actividades Detalladas por Edad</button>
+        <button class="action-button modal-trigger" data-modal-target="modal-detalle-estimulacion">Ver Actividades Detalladas por Edad y Sentido</button>
     </section>
 
-    <!-- SECCIÓN SIMULADOR (Sin cambios estructurales significativos) -->
+    <!-- SECCIÓN SIMULADOR -->
     <section id="simulador" class="slide-up content-padding">
-      <h2>Simulador de Estimulación Sensorial (0-3 Años)</h2>
-      <p class="section-intro">Selecciona edad y actividades para ver qué sentidos se trabajan y qué desarrollo se fomenta.</p>
+      <h2>Simulador de Plan de Estimulación Sensorial (0-3 Años)</h2>
+      <p class="section-intro">Este simulador le permite explorar cómo diferentes actividades pueden combinarse para crear un plan de estimulación equilibrado, identificando los sentidos principales que se trabajan y el tipo de desarrollo que se fomenta. ¡Es una herramienta para inspirar, no para prescribir!</p>
       <div class="simulator-controls">
-        <label for="sim-edad-sensorial">Etapa de Edad (0-3 años):</label>
-        <select id="sim-edad-sensorial" aria-label="Selecciona la etapa de edad del niño">
-          <option value="0-6m">0-6 Meses</option>
-          <option value="6-12m">6-12 Meses</option>
-          <option value="1-2a">1-2 Años</option>
-          <option value="2-3a">2-3 Años</option>
+        <label for="sim-edad-sensorial">Seleccione la Etapa de Edad del Niño/a:</label>
+        <select id="sim-edad-sensorial" aria-label="Selecciona la etapa de edad del niño o niña">
+          <option value="0-3m">0-3 Meses</option>
+          <option value="4-6m">4-6 Meses</option>
+          <option value="7-12m">7-12 Meses</option>
+          <option value="13-18m">13-18 Meses (1-1.5 Años)</option>
+          <option value="19-24m">19-24 Meses (1.5-2 Años)</option>
+          <option value="25-36m">25-36 Meses (2-3 Años)</option>
         </select>
         <fieldset>
-            <legend id="label-actividades">Actividades de Estimulación Realizadas:</legend> <!-- ID para aria-labelledby -->
+            <legend id="label-actividades">Seleccione Actividades de Estimulación Realizadas:</legend>
             <div id="sim-actividades-sensorial-checkboxes" role="group" aria-labelledby="label-actividades">
-              <!-- Checkboxes se cargarán con JS -->
+              <!-- Checkboxes se cargarán dinámicamente con JS -->
+              <p><em>Seleccione una edad para ver las actividades disponibles.</em></p>
             </div>
         </fieldset>
-        <button onclick="iniciarSimuladorSensorial()" class="action-button">Iniciar Simulación</button>
+        <button onclick="iniciarSimuladorSensorial()" class="action-button" id="btnIniciarSimulacion" style="display:none >Iniciar Simulación</button>
       </div>
-      <div id="resultadoSimulacionSensorial" aria-live="polite">
-        <p><em>Los resultados aparecerán aquí...</em></p>
+      <div id="resultadoSimulacionSensorial" aria-live="polite" aria-atomic="true">
+        <p><em>Los resultados de la simulación aparecerán aquí una vez configurada y iniciada.</em></p>
       </div>
-      <button onclick="exportarResultadosSensorial()" class="action-button" id="btnExportarSensorial" style="display:none;">Exportar Resultados (CSV)</button>
+      <button onclick="exportarResultadosSensorial()" class="action-button" id="btnExportarSensorial" ;">Exportar Resultados (CSV)</button>
     </section>
   </main>
-
-  <footer class="content-padding"> <!-- Añadido content-padding para consistencia -->
-    <svg class="footer-svg" viewBox="0 0 200 30" xmlns="http://www.w3.org/2000/svg">
+<!-- NUEVA SECCIÓN: RECURSOS EXTERNOS -->
+    <section id="recursos" class="fade-in content-padding">
+      <!-- ... contenido completo de la sección recursos ... -->
+    </section>
+  <footer class="content-padding">
+    <svg class="footer-svg" viewBox="0 0 200 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M0 20 Q 25 0 50 20 T 100 20 T 150 20 T 200 20" stroke="#FFFFFF" stroke-width="2" fill="none" opacity="0.5"/>
         <path d="M0 25 Q 25 5 50 25 T 100 25 T 150 25 T 200 25" stroke="#FFFFFF" stroke-width="2" fill="none" opacity="0.7"/>
     </svg>
-    <p>© <span id="currentYear"></span> Universo Sensorial Infantil.</p>
+    <p>© <span id="currentYear"></span> Ana Maria Da Cunha. Contenido con fines educativos.</p>
   </footer>
 
-  <!-- MODALES (Estructura base, contenido se puede refinar o cargar con JS si es muy extenso) -->
-  <div id="modal-sensacion-percepcion" class="modal" aria-modal="true" aria-labelledby="modal-sp-title" style="display:none;">
-    <div class="modal-content" role="dialog">
+  <!-- MODALES -->
+  <!-- Modal Sensación y Percepción -->
+  <div id="modal-sensacion-percepcion" class="modal" aria-modal="true" aria-labelledby="modal-sp-title" ;" role="dialog">
+    <div class="modal-content">
       <button class="close-button" aria-label="Cerrar modal">×</button>
       <h3 id="modal-sp-title">Profundizando en Sensación y Percepción</h3>
       <div id="modal-sp-content">
-        <h4>Sensación: El Proceso Fisiológico</h4>
-        <p>Es la detección inicial de un estímulo (luz, sonido) por los sentidos, transmitido como impulso nervioso al cerebro. Es un hecho psíquico elemental.</p>
-        <h4>Percepción: La Interpretación Consciente</h4>
-        <p>Es el proceso por el cual la conciencia integra los estímulos sensoriales y los transforma en experiencia útil, dándoles significado. Implica ser consciente del estímulo y se ve afectada por la experiencia previa y el contexto.</p>
-        <p><em>(Para más detalle, referirse al contenido completo del PDF págs. 3-5)</em></p>
+        <h4>Sensación: El Proceso Fisiológico Básico</h4>
+        <p>La sensación es la respuesta inmediata y directa de nuestros órganos sensoriales (ojos, oídos, piel, etc.) ante un estímulo simple. Es un proceso pasivo en el que los receptores captan energía física o química del ambiente y la convierten en señales nerviosas que se transmiten al cerebro. No implica interpretación ni significado en sí misma.</p>
+        <p><strong>Ejemplo:</strong> Las ondas de luz de una determinada longitud de onda impactan la retina (sensación visual); las vibraciones del aire mueven el tímpano (sensación auditiva).</p>
+        
+        <h4>Percepción: La Construcción Activa de Significado</h4>
+        <p>La percepción es un proceso psicológico complejo y activo mediante el cual el cerebro selecciona, organiza e interpreta las sensaciones para darles un significado y construir una representación coherente del mundo. Está influenciada por nuestras experiencias previas, expectativas, cultura, atención y estado emocional.</p>
+        <p><strong>Ejemplo:</strong> El cerebro interpreta las señales lumínicas como "una manzana roja" (percepción visual); las vibraciones se interpretan como "la voz de mi madre" (percepción auditiva).</p>
+        <p>En el desarrollo infantil, la capacidad perceptiva evoluciona enormemente. Un bebé puede tener la sensación de un objeto en su mano, pero su percepción de qué es ese objeto (un sonajero, un cubo) y para qué sirve, se desarrollará con la experiencia y la maduración cognitiva.</p>
+        <p><em>(Ref. Palacios Sáiz, 2000; Bower; Warren - Información basada en el documento proporcionado y conocimientos generales de psicología).</em></p>
       </div>
     </div>
   </div>
 
-  <div id="modal-gestalt" class="modal" aria-modal="true" aria-labelledby="modal-gestalt-title" style="display:none;">
-    <div class="modal-content" role="dialog">
+  <!-- Modal Gestalt -->
+  <div id="modal-gestalt" class="modal" aria-modal="true" aria-labelledby="modal-gestalt-title";" role="dialog">
+    <div class="modal-content">
       <button class="close-button" aria-label="Cerrar modal">×</button>
-      <h3 id="modal-gestalt-title-placeholder">Principio Gestalt: <span id="modalGestaltNombre"></span></h3>
-      <p id="modalGestaltExplicacion"></p>
-      <img id="modalGestaltImagen" src="" alt="Ejemplo Principio Gestalt">
+      <h3 id="modal-gestalt-title">Principio Gestalt: <span id="modalGestaltNombre">Cargando...</span></h3>
+      <div id="modal-gestalt-body">
+        <p id="modalGestaltExplicacion">Cargando explicación...</p>
+        <figure>
+          <img id="modalGestaltImagen" src="assets/placeholder_image.png" alt="Ejemplo del principio Gestalt descrito.">
+          <figcaption id="modalGestaltImagenCaption" class="sr-only">Ilustración del principio Gestalt.</figcaption>
+        </figure>
+        <p><strong>Aplicación en la infancia:</strong> Los niños utilizan estos principios de forma intuitiva para dar sentido al mundo visual que les rodea, ayudándoles a reconocer objetos, rostros y escenas complejas desde temprana edad.</p>
+      </div>
     </div>
   </div>
   
-  <div id="modal-detalle-sentidos" class="modal" aria-modal="true" aria-labelledby="modal-sentidos-title" style="display:none;">
-    <div class="modal-content large" role="dialog">
+  <!-- Modal Detalle de los Sentidos -->
+  <div id="modal-detalle-sentidos" class="modal" aria-modal="true" aria-labelledby="modal-sentidos-title";" role="dialog">
+    <div class="modal-content large">
       <button class="close-button" aria-label="Cerrar modal">×</button>
-      <h3 id="modal-sentidos-title">Funcionamiento Detallado de los Sentidos</h3>
+      <h3 id="modal-sentidos-title">Funcionamiento Detallado de los Sentidos y su Importancia</h3>
       <div id="modal-sentidos-content">
-        <h4>👅 El Gusto</h4><p>Actúa por contacto de sustancias solubles con las papilas gustativas. Sabores: dulce, amargo, salado, ácido, umami.</p>
-        <h4>👃 El Olfato</h4><p>El epitelio olfatorio capta moléculas aromáticas. Células receptoras, de sostén y basales.</p>
-        <h4>👁️ La Vista</h4><p>Traduce luz en imágenes. Esclerótica, córnea, cristalino (acomodación), retina (conos y bastones).</p>
-        <h4>👂 La Audición</h4><p>Oído Externo (pabellón, conducto, tímpano), Medio (huesecillos, trompa Eustaquio), Interno (cóclea con órgano de Corti, sistema vestibular).</p>
-        <h4>🖐️ El Tacto</h4><p>Receptores en la piel (epidermis, dermis) para presión, temperatura, dolor. Regula temperatura corporal.</p>
-        <p><em>(Información detallada en PDF págs. 11-20)</em></p>
+        <h4><span class="sense-icon" aria-hidden="true">👅</span> El Gusto (Gustativo)</h4>
+        <p>Permite identificar sabores a través de las papilas gustativas en la lengua. Sabores primarios: <strong>dulce</strong> (fuente de energía), <strong>salado</strong> (equilibrio electrolítico), <strong>ácido</strong> (alerta sobre alimentos en mal estado o inmaduros), <strong>amargo</strong> (potencialmente tóxico) y <strong>umami</strong> (sabor "sabroso", asociado a proteínas). Es crucial para la nutrición y la supervivencia, guiando las preferencias alimentarias desde el nacimiento.</p>
+        
+        <h4><span class="sense-icon" aria-hidden="true">👃</span> El Olfato (Olfativo)</h4>
+        <p>Detecta moléculas odoríferas en el aire. El epitelio olfatorio en la cavidad nasal contiene células receptoras que envían señales al bulbo olfatorio. Muy desarrollado en bebés, les ayuda a reconocer a su madre y la leche materna. Estrechamente ligado al gusto, las emociones y la memoria (conexiones directas con el sistema límbico).</p>
+        
+        <h4><span class="sense-icon" aria-hidden="true">👁️</span> La Vista (Visual)</h4>
+        <p>Transforma la energía lumínica en imágenes. La luz atraviesa la córnea, pupila y cristalino (que enfoca), proyectándose en la retina. Allí, los fotorreceptores (<strong>conos</strong> para color y agudeza; <strong>bastones</strong> para visión en baja luminosidad) convierten la luz en impulsos nerviosos enviados al cerebro. Aunque menos madura al nacer, su desarrollo es rápido y fundamental para la exploración y el aprendizaje.</p>
+        
+        <h4><span class="sense-icon" aria-hidden="true">👂</span> La Audición (Auditivo)</h4>
+        <p>Capta ondas sonoras. El oído externo (pabellón auricular, conducto auditivo) las canaliza al tímpano. El oído medio (martillo, yunque, estribo) las amplifica y transmite a la ventana oval. El oído interno (cóclea y órgano de Corti) las convierte en señales eléctricas. Esencial para el desarrollo del lenguaje, la comunicación y la alerta ante peligros.</p>
+        
+        <h4><span class="sense-icon" aria-hidden="true">🖐️</span> El Tacto (Táctil)</h4>
+        <p>Receptores en la piel (epidermis, dermis) detectan presión, vibración, temperatura, dolor y textura. Es el sentido más extenso y el primero en desarrollarse completamente. Fundamental para el vínculo afectivo (contacto piel con piel), la exploración del entorno (especialmente en bebés que exploran con la boca y manos) y la protección.</p>
+
+        <h4><span class="sense-icon" aria-hidden="true">🤸</span> Sentido Propioceptivo (Conciencia Corporal)</h4>
+        <p>Informa al cerebro sobre la posición y movimiento de las partes del cuerpo en el espacio, sin necesidad de mirar. Receptores en músculos, tendones y articulaciones. Clave para la coordinación motora, el equilibrio, la planificación del movimiento, la escritura y el desarrollo del esquema corporal. Un niño con buena propiocepción se mueve con más seguridad y eficiencia.</p>
+
+        <h4><span class="sense-icon" aria-hidden="true">⚖️</span> Sentido Vestibular (Equilibrio y Movimiento)</h4>
+        <p>Ubicado en el oído interno (canales semicirculares, utrículo y sáculo), detecta el movimiento y la posición de la cabeza en relación con la gravedad. Esencial para el equilibrio, la postura, la coordinación ojo-cabeza, la atención y la regulación del nivel de alerta. Actividades como mecerse, girar o saltar estimulan este sentido.</p>
+        <p><em>(Información detallada basada en el documento proporcionado y conocimientos de fisiología y desarrollo infantil, págs. 11-20 del PDF original).</em></p>
       </div>
     </div>
   </div>
 
-  <div id="modal-detalle-evolucion" class="modal" aria-modal="true" aria-labelledby="modal-evolucion-title" style="display:none;">
-    <div class="modal-content large" role="dialog">
+  <!-- Modal Evolución Sensorial -->
+  <div id="modal-detalle-evolucion" class="modal" aria-modal="true" aria-labelledby="modal-evolucion-title";" role="dialog">
+    <div class="modal-content large">
       <button class="close-button" aria-label="Cerrar modal">×</button>
-      <h3 id="modal-evolucion-title">Evolución Detallada del Desarrollo Sensorial</h3>
+      <h3 id="modal-evolucion-title">Hitos del Desarrollo Sensorial del Niño/a</h3>
       <div id="modal-evolucion-content">
-        <h4>Desarrollo Prenatal</h4><p>Periodo Celular, Embrionario (formación órganos sensoriales), Fetal (funcionamiento: gusto, olfato, audición, vista limitada).</p>
-        <h4>Percepción Visual (0-6+ meses)</h4><p>Recién nacido: agudeza pobre, atraído por contraste. 1m: sigue objetos. 2m: convergencia binocular. 3m: interés por manos. 4-6m: ve a distancia, detalles, color, profundidad mejora.</p>
-        <h4>Percepción Auditiva</h4><p>Recién nacido: sensible, gira a sonido, prefiere voz humana. 1m: localiza mejor. 2m: memoriza, distingue fonemas. 3m: imita, distingue tono emocional. 4m+: fija en cara hablante.</p>
-        <h4>Tacto, Gusto, Olfato</h4><p>Olfato: recién nacido responde a olores, reconoce leche materna. Gusto: preferencias innatas, 4m prefiere salado. Tacto: primordial, exploración oral y manual.</p>
-        <p><em>(Información detallada en PDF págs. 22-32)</em></p>
+        <h4>Desarrollo Prenatal: Un Mundo de Sensaciones</h4>
+        <p>El viaje sensorial comienza mucho antes del nacimiento:</p>
+        <ul>
+          <li><strong>Período Celular/Germinal (0-2 semanas):</strong> Inicio de la diferenciación celular.</li>
+          <li><strong>Período Embrionario (3-8 semanas):</strong> Formación rudimentaria de los órganos sensoriales. El tacto es el primero en aparecer alrededor de la boca.</li>
+          <li><strong>Período Fetal (9 semanas - nacimiento):</strong> Los sentidos se vuelven funcionales.
+            <ul>
+              <li><strong>Tacto:</strong> El feto responde a la presión, explora su cuerpo y el entorno uterino.</li>
+              <li><strong>Vestibular:</strong> Se desarrolla tempranamente, el feto percibe los movimientos de la madre.</li>
+              <li><strong>Gusto y Olfato:</strong> El feto traga líquido amniótico, diferenciando sabores (preferencia por lo dulce). Los olores del líquido amniótico son importantes para el reconocimiento postnatal.</li>
+              <li><strong>Audición:</strong> Hacia las 24-28 semanas, el feto reacciona a sonidos, especialmente la voz materna y los latidos del corazón.</li>
+              <li><strong>Vista:</strong> Aunque el útero es oscuro, el feto puede reaccionar a luces intensas aplicadas sobre el abdomen materno en las últimas semanas.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h4>Percepción Visual Postnatal (Hitos Clave)</h4>
+        <ul>
+          <li><strong>Recién nacido - 1 mes:</strong> Agudeza visual limitada (20/400 aprox.), enfoca a 20-30 cm. Ve en blanco y negro y algunos contrastes. Fija la mirada en rostros, prefiere patrones complejos y bordes. Sigue objetos en movimiento lento.</li>
+          <li><strong>2-3 meses:</strong> Mejora la agudeza y el seguimiento. Comienza la visión binocular (ambos ojos trabajan juntos). Distingue colores primarios (rojo, verde). Sonrisa social en respuesta a rostros.</li>
+          <li><strong>4-6 meses:</strong> Visión del color más desarrollada. Percepción de profundidad rudimentaria. Explora visualmente su entorno y sus manos. Coordinación ojo-mano mejora.</li>
+          <li><strong>7-12 meses:</strong> Agudeza visual cercana a la del adulto. Buena percepción de profundidad. Reconoce objetos parcialmente ocultos (permanencia del objeto).</li>
+        </ul>
+
+        <h4>Percepción Auditiva Postnatal</h4>
+        <p>Funcional al nacer. Prefiere la voz humana, especialmente la materna. Localiza sonidos. Discrimina fonemas y tonos emocionales. La exposición temprana a la música y al lenguaje es crucial.</p>
+
+        <h4>Tacto, Gusto, Olfato, Propiocepción y Vestibular Postnatal</h4>
+        <ul>
+          <li><strong>Olfato:</strong> Muy sensible. Reconoce el olor de la madre y su leche.</li>
+          <li><strong>Gusto:</strong> Prefiere lo dulce. Gradualmente acepta otros sabores. Exploración oral intensa.</li>
+          <li><strong>Tacto:</strong> Fundamental para el vínculo, la seguridad y la exploración. La piel es el órgano sensorial más grande.</li>
+          <li><strong>Propiocepción y Vestibular:</strong> Se refinan con el movimiento. El bebé aprende sobre su cuerpo y cómo se mueve en el espacio a través del gateo, el juego y la interacción física. Actividades como ser mecido, balanceado, o jugar boca abajo son vitales.</li>
+        </ul>
+        <p><em>(Información detallada basada en el documento proporcionado y conocimientos de desarrollo infantil, págs. 22-32 del PDF original).</em></p>
       </div>
     </div>
   </div>
   
-  <div id="modal-ayudas-auditivas" class="modal" aria-modal="true" aria-labelledby="modal-aa-title" style="display:none;">
-    <div class="modal-content large" role="dialog">
+  <!-- Modal Ayudas Auditivas -->
+  <div id="modal-ayudas-auditivas" class="modal" aria-modal="true" aria-labelledby="modal-aa-title";" role="dialog">
+    <div class="modal-content large">
       <button class="close-button" aria-label="Cerrar modal">×</button>
-      <h3 id="modal-aa-title">Ayudas y Comunicación para Deficiencia Auditiva</h3>
+      <h3 id="modal-aa-title">Ayudas y Sistemas de Comunicación para la Deficiencia Auditiva</h3>
       <div id="modal-aa-content">
-        <h4>Sistemas de Comunicación:</h4><ul><li>Sistemas Bimodales</li><li>Palabra Complementada</li><li>Dactilología</li><li>Lectura Labiofacial</li><li>Lengua de Signos Española (LSE)</li></ul>
-        <h4>Ayudas Técnicas:</h4><ul><li>Audífonos</li><li>Implante Coclear</li><li>Sistemas de FM</li><li>Reconocimiento del Habla</li><li>Ayudas Hogar (timbres luminosos)</li><li>Comunicación a Distancia (SMS, videollamada)</li><li>Accesibilidad Medios (subtitulado, LSE)</li></ul>
-        <p><em>(Información detallada en PDF págs. 37-40)</em></p>
+        <h4>Sistemas de Comunicación Aumentativos y/o Alternativos:</h4>
+        <ul>
+          <li><strong>Lengua de Signos (o Lenguas de Señas):</strong> Sistemas lingüísticos viso-gestuales completos, con su propia gramática y léxico (ej. LSE en España, ASL en EEUU). Es el principal medio de comunicación para muchas personas sordas.</li>
+          <li><strong>Sistemas Bimodales:</strong> Uso simultáneo del lenguaje oral y signos tomados de la lengua de signos, siguiendo la estructura del lenguaje oral.</li>
+          <li><strong>Palabra Complementada (Cued Speech):</strong> Sistema de apoyos manuales a la lectura labiofacial. Utiliza 8 configuraciones de mano en 4 posiciones cerca del rostro para disambiguar fonemas visualmente similares.</li>
+          <li><strong>Dactilología:</strong> Representación manual de las letras del alfabeto. Se usa para deletrear nombres propios o palabras sin signo conocido.</li>
+          <li><strong>Lectura Labiofacial (LLF):</strong> Habilidad para comprender el habla observando los movimientos de los labios, lengua y expresión facial del hablante. A menudo se usa en combinación con otras ayudas.</li>
+        </ul>
+        <h4>Ayudas Técnicas para la Audición y Comunicación:</h4>
+        <ul>
+          <li><strong>Audífonos:</strong> Dispositivos electrónicos que amplifican el sonido. Hay diversos tipos y tecnologías.</li>
+          <li><strong>Implante Coclear:</strong> Dispositivo electrónico quirúrgico que estimula directamente el nervio auditivo. Para personas con sordera neurosensorial severa a profunda.</li>
+          <li><strong>Sistemas de Frecuencia Modulada (FM) / Roger:</strong> Transmiten la voz del hablante directamente al audífono o implante del usuario, mejorando la relación señal-ruido, muy útiles en entornos ruidosos como el aula.</li>
+          <li><strong>Bucles de Inducción Magnética:</strong> Crean un campo magnético que es captado por la posición "T" de los audífonos, transmitiendo el sonido directamente.</li>
+          <li><strong>Ayudas para el Hogar y Alertas Visuales/Vibratorias:</strong> Timbres luminosos, despertadores vibratorios, avisadores de llanto de bebé.</li>
+          <li><strong>Tecnologías de la Información y Comunicación (TIC):</strong> Video-llamadas (para lengua de signos o LLF), SMS, aplicaciones de transcripción voz-texto.</li>
+          <li><strong>Accesibilidad en Medios Audiovisuales:</strong> Subtitulado, interpretación en lengua de signos.</li>
+        </ul>
+        <p><em>(Información detallada basada en el documento proporcionado y conocimientos sobre tecnologías de apoyo, págs. 37-40 del PDF original).</em></p>
       </div>
     </div>
   </div>
 
-  <div id="modal-ayudas-visuales" class="modal" aria-modal="true" aria-labelledby="modal-av-title" style="display:none;">
-    <div class="modal-content large" role="dialog">
+  <!-- Modal Ayudas Visuales -->
+  <div id="modal-ayudas-visuales" class="modal" aria-modal="true" aria-labelledby="modal-av-title";" role="dialog">
+    <div class="modal-content large">
       <button class="close-button" aria-label="Cerrar modal">×</button>
-      <h3 id="modal-av-title">Ayudas y Adaptaciones para Deficiencia Visual</h3>
+      <h3 id="modal-av-title">Ayudas Técnicas y Adaptaciones para la Deficiencia Visual</h3>
       <div id="modal-av-content">
-        <h4>Sistemas de Lectoescritura:</h4><ul><li>Sistema Braille</li><li>Lectoescritura en Tinta Ampliada</li></ul>
-        <h4>Ayudas Técnicas:</h4><ul><li>Ópticas (gafas, lupas)</li><li>No Ópticas (atriles, lámparas, filtros)</li><li>Tecnológicas (lectores pantalla, magnificadores, líneas Braille, OCR)</li><li>Movilidad (bastón, perro guía)</li></ul>
-        <p><em>(Información detallada en PDF pág. 43)</em></p>
+        <h4>Sistemas de Lectoescritura:</h4>
+        <ul>
+          <li><strong>Sistema Braille:</strong> Sistema táctil de lectoescritura basado en combinaciones de 6 puntos en relieve. Permite el acceso a la información escrita.</li>
+          <li><strong>Lectoescritura en Tinta Ampliada y con Alto Contraste:</strong> Uso de caracteres de gran tamaño y buen contraste (ej. negro sobre amarillo) para personas con baja visión.</li>
+        </ul>
+        <h4>Ayudas Técnicas Ópticas y No Ópticas:</h4>
+        <ul>
+          <li><strong>Ópticas:</strong> Gafas con prescripción específica, lupas manuales, lupas con soporte, telelupas (para ver a distancia), telescopios.</li>
+          <li><strong>No Ópticas:</strong> Atriles para lectura, lámparas de luz regulable y dirigida, filtros de colores para mejorar contraste o reducir deslumbramiento, tiposcopios (guías para leer).</li>
+        </ul>
+        <h4>Ayudas Tecnológicas (Tiflotecnología):</h4>
+        <ul>
+          <li><strong>Software Lector de Pantalla:</strong> Programas que verbalizan el contenido de la pantalla del ordenador o móvil (JAWS, NVDA, VoiceOver, TalkBack).</li>
+          <li><strong>Software Magnificador de Pantalla:</strong> Aumenta el tamaño de los elementos en pantalla.</li>
+          <li><strong>Líneas Braille:</strong> Dispositivos que muestran en Braille táctil el contenido de la pantalla.</li>
+          <li><strong>Sistemas de Reconocimiento Óptico de Caracteres (OCR):</strong> Escanean texto impreso y lo convierten a formato digital, que puede ser leído por un lector de pantalla o magnificado.</li>
+          <li><strong>Aplicaciones móviles específicas:</strong> Identificadores de colores, billetes, objetos, GPS adaptados.</li>
+        </ul>
+        <h4>Ayudas para la Movilidad y Vida Diaria:</h4>
+        <ul>
+          <li><strong>Bastón Blanco (o de movilidad):</strong> Herramienta para detectar obstáculos y orientarse.</li>
+          <li><strong>Perro Guía:</strong> Animal entrenado para asistir a personas ciegas en su movilidad.</li>
+          <li><strong>Adaptaciones en el hogar:</strong> Señalización táctil, contraste de color, organización del espacio.</li>
+        </ul>
+        <p><em>(Información detallada basada en el documento proporcionado y conocimientos sobre tiflotecnología, pág. 43 del PDF original).</em></p>
       </div>
     </div>
   </div>
   
-  <div id="modal-detalle-estimulacion" class="modal" aria-modal="true" aria-labelledby="modal-estim-title" style="display:none;">
-    <div class="modal-content large" role="dialog">
+  <!-- Modal Detalle de Estimulación -->
+  <div id="modal-detalle-estimulacion" class="modal" aria-modal="true" aria-labelledby="modal-estim-title";" role="dialog">
+    <div class="modal-content large">
       <button class="close-button" aria-label="Cerrar modal">×</button>
       <h3 id="modal-estim-title">Actividades Detalladas de Estimulación Sensorial por Edad (0-3 Años)</h3>
       <div id="modal-estim-content">
-        <h4>Objetivos Generales (pág. 47 PDF):</h4> <p>Vista (fijación, observación, memoria), Audición (discriminación, memoria), Tacto (formas, texturas), Olfato (discriminación olores), Gusto (discriminación sabores).</p>
-        <h4>Estimulación Gustativa y Olfativa (pág. 48 PDF):</h4><p>0-6m: leche, olores suaves. 6-12m: alimentación complementaria. 1-3a: juegos olores, probar sabores.</p>
-        <h4>Estimulación Visual (pág. 49 PDF):</h4><p>0-6m: móviles contraste, caras. 6-12m: juguetes vivos, libros. 1-3a: libros imágenes, luces, bloques.</p>
-        <h4>Estimulación Auditiva (pág. 50 PDF):</h4><p>0-6m: voz, nanas, música. 6-12m: canciones, reconocer voz. 1-3a: reproducir ruidos, instrumentos, cuentos.</p>
-        <h4>Estimulación Cinestésico-Táctil (pág. 51 PDF):</h4><p>0-6m: masajes, texturas. 6-12m: explorar con manos/boca, agua/arena. 1-3a: plastilina, pintura dedos, cajas sensoriales.</p>
+        <p><strong>Nota importante:</strong> Estas son ideas generales. Siempre se debe observar al niño/a, seguir sus intereses, respetar su ritmo y asegurar un entorno seguro. La calidad de la interacción es más importante que la cantidad de actividades.</p>
+        
+        <h4>Objetivos Generales de la Estimulación Sensorial (Ref. pág. 47 PDF):</h4>
+        <ul>
+          <li><strong>Vista:</strong> Promover la fijación y seguimiento visual, la observación de detalles, la coordinación óculo-manual y la memoria visual.</li>
+          <li><strong>Audición:</strong> Fomentar la discriminación de sonidos, la localización de su fuente, la memoria auditiva y la comprensión del lenguaje.</li>
+          <li><strong>Tacto:</strong> Desarrollar la capacidad de reconocer formas, texturas, temperaturas y consistencias; promover la exploración manual y oral.</li>
+          <li><strong>Olfato:</strong> Estimular la discriminación de diferentes olores agradables y desagradables, asociándolos a sus fuentes.</li>
+          <li><strong>Gusto:</strong> Favorecer la discriminación de sabores básicos y la aceptación de nuevos alimentos.</li>
+          <li><strong>Propioceptivo y Vestibular:</strong> Mejorar la conciencia corporal, el equilibrio, la coordinación motora y la planificación del movimiento.</li>
+        </ul>
+
+        <h4>Estimulación por Áreas y Edades (Ejemplos):</h4>
+        
+        <h5>Gusto y Olfato (Ref. pág. 48 PDF):</h5>
+        <ul>
+          <li><strong>0-6 Meses:</strong> Exposición al olor de la madre y la leche. Olores suaves y naturales en el ambiente (lavanda en un difusor lejano, con precaución).</li>
+          <li><strong>6-12 Meses:</strong> Introducción de la alimentación complementaria: ofrecer purés y trozos seguros de frutas y verduras con diferentes olores y sabores. Dejar que huelan antes de probar.</li>
+          <li><strong>1-3 Años:</strong> Juegos de "adivinar el olor" con botes seguros (canela, vainilla, limón, hierbas aromáticas suaves). Probar y nombrar sabores contrastantes (un trocito de limón vs. un trocito de plátano). Cocinar juntos actividades sencillas.</li>
+        </ul>
+
+        <h5>Estimulación Visual (Ref. pág. 49 PDF):</h5>
+        <ul>
+          <li><strong>0-6 Meses:</strong> Móviles de alto contraste (blanco/negro al principio, luego colores primarios). Juguetes con caras grandes y sonrientes. Mirarse en un espejo irrompible. Libros de tela con imágenes simples.</li>
+          <li><strong>6-12 Meses:</strong> Juguetes de colores vivos. Libros con solapas y texturas. Juegos de "cucú-tras". Explorar objetos de diferentes formas y tamaños. Pompas de jabón.</li>
+          <li><strong>1-3 Años:</strong> Libros con más detalles e historias. Juegos de encajar formas. Construcción con bloques. Linternas para proyectar luces (supervisado). Identificar objetos en imágenes.</li>
+        </ul>
+
+        <h5>Estimulación Auditiva (Ref. pág. 50 PDF):</h5>
+        <ul>
+          <li><strong>0-6 Meses:</strong> Hablarle suavemente, cantarle nanas. Música suave y variada. Sonajeros y móviles musicales.</li>
+          <li><strong>6-12 Meses:</strong> Canciones con gestos. Nombrar objetos y acciones. Jugar a reconocer voces familiares. Instrumentos sencillos (maracas, panderetas).</li>
+          <li><strong>1-3 Años:</strong> Leer cuentos con entonación variada. Juegos de imitar sonidos de animales o vehículos. Identificar sonidos del entorno. Escuchar diferentes géneros musicales.</li>
+        </ul>
+
+        <h5>Estimulación Táctil, Propioceptiva y Vestibular (Ref. pág. 51 PDF):</h5>
+        <ul>
+          <li><strong>0-6 Meses:</strong> Masajes suaves. Contacto piel con piel. Juguetes de diferentes texturas (peluches, mordedores de goma, telas suaves y rugosas). Tiempo boca abajo sobre diferentes superficies. Mecer suavemente.</li>
+          <li><strong>6-12 Meses:</strong> Explorar objetos con manos y boca. Jugar con agua en la bañera (supervisado). Gatear sobre alfombras, césped (seguro). Cajas sensoriales con elementos grandes y seguros (pañuelos, pelotas blandas). Juegos de balanceo.</li>
+          <li><strong>1-3 Años:</strong> Jugar con plastilina casera, pintura de dedos. Cajas sensoriales con arroz, pasta, legumbres (supervisado para evitar ingesta). Caminar descalzo por diferentes texturas seguras. Juegos de empujar, tirar, cargar objetos ligeros. Columpiarse, deslizarse, saltar, trepar (adaptado y seguro).</li>
+        </ul>
       </div>
     </div>
   </div>
 
-  <audio id="sonidoExito" src="sonido_exito_placeholder.mp3" preload="auto"></audio>
-  <audio id="sonidoClick" src="sonido_click_placeholder.mp3" preload="auto"></audio>
-  <audio id="sonidoHover" src="sonido_hover_placeholder.mp3" preload="auto"></audio>
+  <!-- Elementos de Audio (se recomienda usar rutas relativas si están en la misma carpeta raíz o subcarpeta 'assets') -->
+  <audio id="sonidoExito" src="sonido_exito.mp3" preload="auto"></audio>
+  <audio id="sonidoClick" src="sonido_click.mp3" preload="auto"></audio>
+  <audio id="sonidoHover" src="sonido_hover.mp3" preload="auto"></audio>
 
-  <script src="script.js"></script> <!-- Asumiendo script.js está en la raíz -->
+  <script src="script.js"></script>
   <script>
+    // Script inline mínimo para funcionalidad que no depende de elementos complejos
     document.getElementById('currentYear').textContent = new Date().getFullYear();
   </script>
 </body>
