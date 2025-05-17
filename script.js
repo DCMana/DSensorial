@@ -4,259 +4,246 @@ const sonidoClick = document.getElementById('sonidoClick');
 const sonidoHover = document.getElementById('sonidoHover');
 
 const gestaltInfo = {
-    "figura-fondo": { /* ... (datos como antes) ... */ },
-    // ... (resto de principios Gestalt)
-};
-const gestaltInfo = {
-    "figura-fondo": {
-      nombre: "Relación Figura-Fondo",
-      explicacion: "Nuestra percepción organiza el campo visual en una 'figura' que resalta y un 'fondo' que la rodea. La figura suele ser más pequeña, definida y significativa, mientras que el fondo es más vago. En imágenes ambiguas, la figura y el fondo pueden alternarse.",
-      imagen: "assets/gestalt_figura_fondo_placeholder.png"
-    },
-    "proximidad": {
-      nombre: "Principio de Proximidad",
-      explicacion: "Tendemos a agrupar perceptualmente los elementos que están cercanos entre sí en el espacio o en el tiempo. Los objetos próximos se ven como una unidad.",
-      imagen: "assets/gestalt_proximidad_placeholder.png"
-    },
-    "similitud": {
-      nombre: "Principio de Similitud",
-      explicacion: "Agrupamos los elementos que son similares en forma, tamaño, color u otra característica. Lo similar tiende a ser percibido como parte del mismo conjunto.",
-      imagen: "assets/gestalt_similitud_placeholder.png"
-    },
-     "direccion": {
-      nombre: "Principio de Continuidad (o Dirección Común)",
-      explicacion: "Los estímulos que guardan una continuidad de forma o que parecen seguir un mismo patrón o dirección tienden a ser percibidos como una unidad o figura integrada.",
-      imagen: "assets/gestalt_direccion_placeholder.png"
-    },
-    "simplicidad": {
-      nombre: "Principio de Simplicidad (Ley de la Prägnanz o Buena Forma)",
-      explicacion: "El individuo organiza sus campos perceptuales con rasgos simples, regulares, estables y equilibrados. Tendemos a percibir las formas de la manera más simple, ordenada y 'buena' posible.",
-      imagen: "assets/gestalt_simplicidad_placeholder.png"
-    },
-    "cierre": {
-      nombre: "Principio de Cierre",
-      explicacion: "Nuestra mente tiende a completar las figuras incompletas, añadiendo los elementos faltantes para percibir una forma cerrada y con sentido, basándose en patrones previamente conocidos.",
-      imagen: "assets/gestalt_cierre_placeholder.png"
-    }
+    "figura-fondo": { nombre: "Relación Figura-Fondo", explicacion: "Nuestra percepción organiza el campo visual en una 'figura' que resalta y un 'fondo' que la rodea...", imagen: "assets/gestalt_figura_fondo_placeholder.png" },
+    "proximidad": { nombre: "Principio de Proximidad", explicacion: "Tendemos a agrupar perceptualmente los elementos que están cercanos entre sí...", imagen: "assets/gestalt_proximidad_placeholder.png" },
+    "similitud": { nombre: "Principio de Similitud", explicacion: "Agrupamos los elementos que son similares en forma, tamaño, color...", imagen: "assets/gestalt_similitud_placeholder.png" },
+    "direccion": { nombre: "Principio de Continuidad", explicacion: "Los estímulos que guardan una continuidad de forma o dirección tienden a ser percibidos como una unidad...", imagen: "assets/gestalt_direccion_placeholder.png" },
+    "simplicidad": { nombre: "Principio de Simplicidad (Buena Forma)", explicacion: "Organizamos los campos perceptuales con rasgos simples, regulares y estables...", imagen: "assets/gestalt_simplicidad_placeholder.png" },
+    "cierre": { nombre: "Principio de Cierre", explicacion: "Nuestra mente tiende a completar las figuras incompletas para darles sentido...", imagen: "assets/gestalt_cierre_placeholder.png" }
 };
 
-
-const actividadesSensorialesPorEdad = { /* ... (datos como antes) ... */ };
 const actividadesSensorialesPorEdad = {
     "0-6m": [
         { nombre: "Móviles coloridos y sonajeros", sentidos: ["Vista", "Oído"], desarrollo: "Seguimiento visual, localización auditiva" },
         { nombre: "Masajes suaves con diferentes texturas", sentidos: ["Tacto"], desarrollo: "Conciencia corporal, relajación, vínculo" },
-        { nombre: "Tiempo boca abajo (Tummy Time) con estímulos visuales", sentidos: ["Vista", "Tacto", "Propiocepción"], desarrollo: "Fortalecimiento postural, exploración visual" },
-        { nombre: "Hablarle y cantarle mirándole a la cara", sentidos: ["Oído", "Vista"], desarrollo: "Vínculo afectivo, reconocimiento de voz y rostro" }
+        { nombre: "Tiempo boca abajo con estímulos visuales", sentidos: ["Vista", "Tacto", "Propiocepción"], desarrollo: "Fortalecimiento, exploración visual" },
+        { nombre: "Hablarle y cantarle mirándole", sentidos: ["Oído", "Vista"], desarrollo: "Vínculo, reconocimiento voz/rostro" }
     ],
     "6-12m": [
-        { nombre: "Jugar con bloques de texturas y encajables simples", sentidos: ["Tacto", "Vista"], desarrollo: "Manipulación fina, coordinación ojo-mano, formas" },
-        { nombre: "Explorar alimentos seguros con las manos (BLW)", sentidos: ["Tacto", "Gusto", "Olfato"], desarrollo: "Descubrimiento de texturas, sabores, olores" },
-        { nombre: "Gatear sobre diferentes superficies (alfombra, madera, césped)", sentidos: ["Tacto", "Propiocepción"], desarrollo: "Percepción espacial, discriminación de texturas" },
-        { nombre: "Libros de tela con sonidos, texturas y solapas", sentidos: ["Vista", "Oído", "Tacto"], desarrollo: "Estimulación multisensorial, causa-efecto" }
+        { nombre: "Bloques de texturas y encajables simples", sentidos: ["Tacto", "Vista"], desarrollo: "Manipulación fina, coordinación ojo-mano" },
+        { nombre: "Explorar alimentos seguros con manos (BLW)", sentidos: ["Tacto", "Gusto", "Olfato"], desarrollo: "Texturas, sabores, olores" },
+        { nombre: "Gatear sobre diferentes superficies", sentidos: ["Tacto", "Propiocepción"], desarrollo: "Percepción espacial, texturas" },
+        { nombre: "Libros de tela con sonidos y solapas", sentidos: ["Vista", "Oído", "Tacto"], desarrollo: "Multisensorial, causa-efecto" }
     ],
     "1-2a": [
-        { nombre: "Pintura de dedos o jugar con plastilina casera", sentidos: ["Tacto", "Vista", "Olfato"], desarrollo: "Creatividad, experimentación con texturas, motricidad fina" },
-        { nombre: "Caminar descalzo por arena, césped (entorno seguro)", sentidos: ["Tacto", "Propiocepción"], desarrollo: "Mejora del equilibrio, percepción de texturas variadas" },
-        { nombre: "Juegos con instrumentos musicales sencillos (maracas, xilófono)", sentidos: ["Oído", "Tacto"], desarrollo: "Percepción rítmica, relación causa-efecto auditiva" },
-        { nombre: "Probar y oler frutas con diferentes características", sentidos: ["Gusto", "Olfato", "Tacto"], desarrollo: "Discriminación de sabores, olores y texturas" }
+        { nombre: "Pintura de dedos o plastilina casera", sentidos: ["Tacto", "Vista", "Olfato"], desarrollo: "Creatividad, texturas, motricidad fina" },
+        { nombre: "Caminar descalzo (arena, césped seguro)", sentidos: ["Tacto", "Propiocepción"], desarrollo: "Equilibrio, percepción texturas" },
+        { nombre: "Instrumentos musicales sencillos", sentidos: ["Oído", "Tacto"], desarrollo: "Ritmo, causa-efecto auditivo" },
+        { nombre: "Probar y oler frutas variadas", sentidos: ["Gusto", "Olfato", "Tacto"], desarrollo: "Discriminación sabores/olores" }
     ],
     "2-3a": [
-        { nombre: "Circuitos motores con túneles, cojines y aros", sentidos: ["Tacto", "Propiocepción", "Vista"], desarrollo: "Planificación motora, conciencia corporal, percepción espacial" },
-        { nombre: "Bolsa misteriosa: reconocer objetos solo por el tacto", sentidos: ["Tacto"], desarrollo: "Estereognosia (reconocimiento de formas por el tacto)" },
-        { nombre: "Juegos de identificar olores (botes con especias, flores, esencias)", sentidos: ["Olfato"], desarrollo: "Discriminación y memoria olfativa" },
-        { nombre: "Jugar con agua a diferentes temperaturas (templada, fresca - supervisado)", sentidos: ["Tacto"], desarrollo: "Percepción térmica, experimentación" }
+        { nombre: "Circuitos con túneles y cojines", sentidos: ["Tacto", "Propiocepción", "Vista"], desarrollo: "Planificación motora, percepción espacial" },
+        { nombre: "Bolsa misteriosa (reconocer por tacto)", sentidos: ["Tacto"], desarrollo: "Estereognosia" },
+        { nombre: "Juegos de olores (botes especias, flores)", sentidos: ["Olfato"], desarrollo: "Discriminación olfativa" },
+        { nombre: "Jugar con agua a temperaturas (supervisado)", sentidos: ["Tacto"], desarrollo: "Percepción térmica" }
     ]
 };
-
-
 let simulacionSensorialActual = {};
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Smooth scrolling
-  document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      playSound(sonidoClick);
-      const targetId = this.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
+    const menuToggle = document.getElementById('menu-toggle');
+    const mainNav = document.getElementById('main-nav');
 
-  // Modales (Gestalt y Alteraciones)
-  setupModal("gestaltModal", ".card[data-gestalt]", (card) => {
-    const gestaltKey = card.dataset.gestalt;
-    const info = gestaltInfo[gestaltKey];
-    if (info) {
-      document.getElementById("modalGestaltNombre").textContent = info.nombre;
-      document.getElementById("modalGestaltExplicacion").textContent = info.explicacion;
-      document.getElementById("modalGestaltImagen").src = info.imagen;
-      document.getElementById("modalGestaltImagen").alt = `Ejemplo de ${info.nombre}`;
-      return true; // Indica que el modal debe abrirse
-    }
-    return false;
-  });
+    if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', () => {
+            const isActive = mainNav.classList.toggle('is-active');
+            menuToggle.setAttribute('aria-expanded', isActive.toString());
+            mainNav.setAttribute('aria-hidden', (!isActive).toString());
+            menuToggle.querySelector('i').classList.toggle('fa-bars');
+            menuToggle.querySelector('i').classList.toggle('fa-times');
+            playSound(sonidoClick);
+        });
 
-  setupModal("alteracionModal", ".action-button-inline[data-modal-type]", (button) => {
-    const type = button.dataset.modalType;
-    return loadAlteracionContent(type); // loadAlteracionContent decidirá si se abre
-  });
-
-
-  // Acordeones
-  document.querySelectorAll(".accordion-header").forEach(header => {
-    header.addEventListener("click", function() {
-      playSound(sonidoClick);
-      const content = this.nextElementSibling;
-      const isActive = content.classList.toggle('active');
-      
-      // Cerrar otros acordeones en el mismo contenedor (padre del .accordion-item)
-      if (isActive) {
-          const parentContainer = this.closest('.stimulation-accordion'); // O la clase contenedora de los acordeones
-          if (parentContainer) {
-            parentContainer.querySelectorAll('.accordion-content.active').forEach(activeContent => {
-              if (activeContent !== content) {
-                  activeContent.classList.remove('active');
-                  activeContent.style.maxHeight = null;
-                  activeContent.style.paddingTop = "0";
-                  activeContent.style.paddingBottom = "0";
-              }
+        // Cerrar menú al hacer clic en un enlace
+        mainNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (mainNav.classList.contains('is-active')) {
+                    mainNav.classList.remove('is-active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    mainNav.setAttribute('aria-hidden', 'true');
+                    menuToggle.querySelector('i').classList.remove('fa-times');
+                    menuToggle.querySelector('i').classList.add('fa-bars');
+                }
             });
-          }
-      }
+        });
+    }
 
-      if (content.classList.contains('active')) {
-        content.style.paddingTop = "1.5rem"; // Padding cuando está activo
-        content.style.paddingBottom = "1.5rem";
-        content.style.maxHeight = content.scrollHeight + "px";
-      } else {
-        content.style.maxHeight = null;
-        content.style.paddingTop = "0"; // Quitar padding al cerrar
-        content.style.paddingBottom = "0";
-      }
+    // Smooth scrolling para enlaces de nav (revisado)
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            playSound(sonidoClick);
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                // Considerar el header fijo para el offset
+                const headerOffset = document.querySelector('header').offsetHeight || 70;
+                const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
+        });
     });
-    header.addEventListener("mouseenter", () => playSound(sonidoHover, 0.3));
-  });
-  
-  // Sonidos para botones de acción y tabs
-  document.querySelectorAll('.action-button, .tab-button').forEach(button => {
-      button.addEventListener("mouseenter", () => playSound(sonidoHover, 0.3));
-  });
-
-  // Simulador Sensorial: Carga inicial y listener
-  const edadSelectSensorial = document.getElementById('sim-edad-sensorial');
-  if(edadSelectSensorial) {
-    edadSelectSensorial.addEventListener('change', cargarActividadesSimuladorSensorial);
-    cargarActividadesSimuladorSensorial(); 
-  }
-
-  // Tabs Evolución: Listener para botones
-  document.querySelectorAll('#evolucion .tab-button').forEach(button => {
-    button.addEventListener('click', function() {
-        const contentId = this.getAttribute('onclick').match(/'([^']+)'/)[1];
-        showEvolutionContent(contentId, this);
-    });
-  });
-}); // Fin de DOMContentLoaded
-
-
-function setupModal(modalId, triggerSelector, contentSetterCallback) {
-    const modal = document.getElementById(modalId);
-    if (!modal) return;
-
-    const triggers = document.querySelectorAll(triggerSelector);
-    const closeButton = modal.querySelector(`.close-button[data-modal-id="${modalId}"]`);
-
-    triggers.forEach(trigger => {
-        trigger.addEventListener("click", () => {
-            if (contentSetterCallback(trigger)) { // Llama al callback para setear contenido
-                modal.style.display = "block";
-                playSound(sonidoClick);
+    
+    // --- MODALES ---
+    const modalTriggers = document.querySelectorAll('.modal-trigger');
+    modalTriggers.forEach(trigger => {
+        trigger.addEventListener('click', function() {
+            const modalId = this.dataset.modalTarget;
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                // Si es un modal de Gestalt, cargar contenido específico
+                if (modalId === 'modal-gestalt' && this.dataset.gestaltKey) {
+                    const gestaltKey = this.dataset.gestaltKey;
+                    const info = gestaltInfo[gestaltKey];
+                    if (info) {
+                        modal.querySelector('#modalGestaltNombre').textContent = info.nombre;
+                        modal.querySelector('#modalGestaltExplicacion').textContent = info.explicacion;
+                        const imgEl = modal.querySelector('#modalGestaltImagen');
+                        imgEl.src = info.imagen;
+                        imgEl.alt = `Ejemplo de ${info.nombre}`;
+                    }
+                }
+                // (Podrías añadir lógica similar para otros modales si su contenido es dinámico)
+                openModal(modal);
             }
         });
     });
 
-    if (closeButton) {
-        closeButton.onclick = () => {
-            modal.style.display = "none";
-            playSound(sonidoClick);
-        }
-    }
-    window.addEventListener("click", (event) => {
-        if (event.target == modal) {
-            modal.style.display = "none";
+    document.querySelectorAll('.modal .close-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const modal = this.closest('.modal');
+            if (modal) closeModal(modal);
+        });
+    });
+
+    window.addEventListener('click', (event) => {
+        document.querySelectorAll('.modal').forEach(modal => {
+            if (event.target === modal) {
+                closeModal(modal);
+            }
+        });
+    });
+    
+    window.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            document.querySelectorAll('.modal.is-visible').forEach(modal => {
+                closeModal(modal);
+            });
         }
     });
-}
 
+    // --- ACORDEONES ---
+    document.querySelectorAll(".accordion-header").forEach(header => {
+        header.addEventListener("click", function() {
+            playSound(sonidoClick);
+            const content = this.nextElementSibling;
+            const item = this.parentElement;
+            const isActive = item.classList.toggle('active');
+            this.classList.toggle('active', isActive); // Para el icono +/-
 
-function loadAlteracionContent(type) {
-    const tituloEl = document.getElementById("modalAlteracionTitulo");
-    const contenidoEl = document.getElementById("modalAlteracionContenido");
-    let titulo = "";
-    let contenidoHTML = "";
+            // Cerrar otros acordeones en el mismo contenedor
+            if (isActive) {
+                const parentContainer = this.closest('.accordion-container');
+                if (parentContainer) {
+                    parentContainer.querySelectorAll('.accordion-item.active').forEach(activeItem => {
+                        if (activeItem !== item) {
+                            activeItem.classList.remove('active');
+                            activeItem.querySelector('.accordion-header').classList.remove('active');
+                            const activeContent = activeItem.querySelector('.accordion-content');
+                            activeContent.style.maxHeight = null;
+                            activeContent.style.paddingTop = "0";
+                            activeContent.style.paddingBottom = "0";
+                        }
+                    });
+                }
+            }
 
-    if (type === "auditiva") {
-        titulo = "Ayudas y Comunicación en Deficiencia Auditiva";
-        contenidoHTML = `
-            <h4>Sistemas de Comunicación:</h4>
-            <ul>
-                <li><strong>Sistemas Bimodales:</strong> Usan palabra hablada y signos simultáneamente.</li>
-                <li><strong>Palabra Complementada (Cued Speech):</strong> Gestos manuales cerca de la boca para clarificar fonemas visualmente similares en la lectura labial.</li>
-                <li><strong>Dactilología:</strong> Deletreo manual de palabras, letra por letra.</li>
-                <li><strong>Lectura Labiofacial:</strong> Interpretar el habla observando los movimientos de los labios y la expresión facial.</li>
-                <li><strong>Lengua de Signos Española (LSE):</strong> Lengua completa con su propia gramática y vocabulario, usada por la comunidad sorda.</li>
-            </ul>
-            <h4>Ayudas Técnicas Principales:</h4>
-            <ul>
-                <li><strong>Audífonos:</strong> Amplifican los sonidos. Vitales para hipoacusias.</li>
-                <li><strong>Implante Coclear:</strong> Dispositivo electrónico que estimula directamente el nervio auditivo. Para sorderas neurosensoriales profundas.</li>
-                <li><strong>Sistemas de Frecuencia Modulada (FM):</strong> Micrófono para el hablante y receptor para el oyente, mejorando la señal de voz sobre el ruido de fondo. Útil en aulas.</li>
-                <li><strong>Sistemas de Reconocimiento del Habla:</strong> Software que transcribe la voz a texto.</li>
-                <li><strong>Ayudas para el Hogar:</strong> Timbres luminosos o vibratorios, despertadores vibratorios.</li>
-                <li><strong>Comunicación a Distancia:</strong> SMS, videollamadas con intérprete o lectura labial, SVisual.</li>
-                <li><strong>Accesibilidad en Medios:</strong> Subtitulado, intérpretes de LSE en TV.</li>
-            </ul>
-            <p><em>La elección de ayudas y sistemas depende del grado de pérdida, edad, y preferencias individuales.</em></p>
-        `;
-    } else if (type === "visual") {
-        titulo = "Ayudas y Adaptaciones en Deficiencia Visual";
-        contenidoHTML = `
-            <h4>Sistemas de Lectoescritura:</h4>
-            <ul>
-                <li><strong>Sistema Braille:</strong> Sistema táctil de lectoescritura basado en 6 puntos en relieve. Esencial para personas ciegas.</li>
-                <li><strong>Lectoescritura en Tinta Ampliada:</strong> Para personas con resto visual, usando caracteres grandes, buen contraste y espaciado.</li>
-            </ul>
-            <h4>Ayudas Técnicas:</h4>
-            <ul>
-                <li><strong>Ópticas:</strong> Gafas especiales, lupas (manuales, de pie, electrónicas), telescopios.</li>
-                <li><strong>No Ópticas:</strong> Atriles, lámparas de buena iluminación, filtros de luz para reducir deslumbramiento, tiposcopios (guías de lectura).</li>
-                <li><strong>Tecnológicas (Tiflotecnología):</strong>
-                    <ul>
-                        <li>Lectores de pantalla (JAWS, NVDA) que verbalizan el contenido del ordenador.</li>
-                        <li>Software de magnificación de pantalla.</li>
-                        <li>Líneas Braille (dispositivos que muestran texto del ordenador en Braille).</li>
-                        <li>Escáneres con software OCR (Reconocimiento Óptico de Caracteres) para convertir texto impreso a digital/voz.</li>
-                        <li>Agendas y teléfonos parlantes o con interfaces accesibles.</li>
-                    </ul>
-                </li>
-                <li><strong>Para la Movilidad y Vida Diaria:</strong> Bastón blanco (largo, verde para baja visión), perros guía, aplicaciones de GPS adaptadas.</li>
-            </ul>
-            <p><em>Una buena iluminación, contrastes adecuados y organización del espacio son cruciales.</em></p>
-        `;
-    } else {
-        return false; // No cargar modal si el tipo no es reconocido
+            if (item.classList.contains('active')) {
+                content.style.paddingTop = "1rem";
+                content.style.paddingBottom = "1rem";
+                content.style.maxHeight = content.scrollHeight + "px";
+            } else {
+                content.style.maxHeight = null;
+                content.style.paddingTop = "0";
+                content.style.paddingBottom = "0";
+            }
+        });
+        header.addEventListener("mouseenter", () => playSound(sonidoHover, 0.2));
+    });
+  
+    // Sonidos para botones de acción y tabs
+    document.querySelectorAll('.action-button, .tab-button, .action-button-inline').forEach(button => {
+        button.addEventListener("mouseenter", () => playSound(sonidoHover, 0.2));
+    });
+
+    // Simulador Sensorial: Carga inicial y listener
+    const edadSelectSensorial = document.getElementById('sim-edad-sensorial');
+    if(edadSelectSensorial) {
+        edadSelectSensorial.addEventListener('change', cargarActividadesSimuladorSensorial);
+        cargarActividadesSimuladorSensorial(); 
     }
 
-    tituloEl.textContent = titulo;
-    contenidoEl.innerHTML = contenidoHTML;
-    return true; // Indica que el modal debe abrirse
-}
-window.openAlteracionModal = loadAlteracionContent; // Hacer accesible desde HTML
+    // Tabs Evolución: Listener para botones
+    document.querySelectorAll('#evolucion .tab-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const contentId = this.getAttribute('onclick').match(/'([^']+)'/)[1]; // Asumiendo que el onclick sigue ahí
+            showEvolutionContent(contentId, this);
+        });
+    });
 
+    // Active link en nav según scroll
+    const sections = document.querySelectorAll("main section[id]");
+    const navLi = document.querySelectorAll("nav ul li a");
+    window.addEventListener("scroll", () => {
+        let current = "";
+        const headerHeight = document.querySelector('header').offsetHeight || 70;
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop - headerHeight - 50; // 50px de offset adicional
+            if (pageYOffset >= sectionTop) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        navLi.forEach((a) => {
+            a.classList.remove("active-link");
+            if (a.getAttribute("href") === `#${current}`) {
+                a.classList.add("active-link");
+            }
+        });
+    });
+
+}); // Fin de DOMContentLoaded
+
+function openModal(modal) {
+    if (!modal) return;
+    modal.style.display = "block";
+    modal.setAttribute('aria-hidden', 'false');
+    // Enfocar el modal o su primer elemento enfocable para accesibilidad
+    const focusable = modal.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+    if (focusable) focusable.focus();
+    document.body.style.overflow = 'hidden'; // Evitar scroll del fondo
+    playSound(sonidoClick);
+    setTimeout(() => modal.classList.add('is-visible'), 10); // Para la transición de opacidad
+}
+
+function closeModal(modal) {
+    if (!modal) return;
+    modal.classList.remove('is-visible');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = ''; // Restaurar scroll
+    playSound(sonidoClick);
+    // Devolver el foco al elemento que abrió el modal si es posible/necesario
+    // (requiere guardar la referencia al trigger)
+    setTimeout(() => modal.style.display = "none", 300); // Esperar que termine la transición
+}
+
+// Las siguientes funciones deben estar en el scope global si son llamadas por `onclick`
+// o asegurarse que los event listeners se añadan en DOMContentLoaded
 
 function cargarActividadesSimuladorSensorial() {
     const edadSelectSensorial = document.getElementById('sim-edad-sensorial');
@@ -282,12 +269,13 @@ function cargarActividadesSimuladorSensorial() {
       });
     }
 }
+window.cargarActividadesSimuladorSensorial = cargarActividadesSimuladorSensorial;
 
-// --- Funciones Globales (accesibles desde onclick en HTML) ---
+
 window.iniciarSimuladorSensorial = function() {
     const resultadoDiv = document.getElementById("resultadoSimulacionSensorial");
     const edad = document.getElementById("sim-edad-sensorial").value;
-    const nombreSimulado = "Peque Explorador Sensorial";
+    const nombreSimulado = "Peque Explorador";
 
     const actividadesSeleccionadasNombres = [];
     document.querySelectorAll('#sim-actividades-sensorial-checkboxes input[type="checkbox"]:checked').forEach(cb => {
@@ -373,10 +361,10 @@ window.showEvolutionContent = function(contentId, clickedButton) {
   if (clickedButton) clickedButton.classList.add('active');
 }
 
-function playSound(audioElement, volume = 0.5) {
+function playSound(audioElement, volume = 0.3) { // Volumen más bajo por defecto para sonidos de UI
   if (audioElement && typeof audioElement.play === 'function') {
     audioElement.currentTime = 0; 
     audioElement.volume = volume;
-    audioElement.play().catch(error => console.warn("Advertencia al reproducir sonido:", error.name, error.message)); // Usar warn para no ser tan intrusivo
+    audioElement.play().catch(error => console.warn("Advertencia al reproducir sonido:", error.name, error.message));
   }
 }
