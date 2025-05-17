@@ -1,75 +1,59 @@
-// Variables globales para elementos de audio y datos
-const sonidoExito = document.getElementById('sonidoExito');
-const sonidoClick = document.getElementById('sonidoClick');
-const sonidoHover = document.getElementById('sonidoHover');
+// Variables globales para elementos de audio (inicializadas en DOMContentLoaded)
+let sonidoExito, sonidoClick, sonidoHover;
 
+// Datos (sin cambios)
 const gestaltInfo = {
-    "figura-fondo": { nombre: "Relación Figura-Fondo", explicacion: "Nuestra percepción organiza el campo visual en una 'figura' que resalta y un 'fondo' que la rodea. En imágenes ambiguas, la figura y el fondo pueden alternarse.", imagen: "assets/gestalt_figura_fondo_placeholder.png" },
-    "proximidad": { nombre: "Principio de Proximidad", explicacion: "Tendemos a agrupar perceptualmente los elementos que están cercanos entre sí. Los objetos próximos se ven como una unidad.", imagen: "assets/gestalt_proximidad_placeholder.png" },
-    "similitud": { nombre: "Principio de Similitud", explicacion: "Agrupamos los elementos que son similares en forma, tamaño, color. Lo similar tiende a ser percibido como parte del mismo conjunto.", imagen: "assets/gestalt_similitud_placeholder.png" },
-    "direccion": { nombre: "Principio de Continuidad", explicacion: "Los estímulos que guardan una continuidad de forma o dirección tienden a ser percibidos como una unidad.", imagen: "assets/gestalt_direccion_placeholder.png" },
-    "simplicidad": { nombre: "Principio de Simplicidad (Buena Forma)", explicacion: "Organizamos los campos perceptuales con rasgos simples, regulares y estables. Preferimos lo simple.", imagen: "assets/gestalt_simplicidad_placeholder.png" },
-    "cierre": { nombre: "Principio de Cierre", explicacion: "Nuestra mente tiende a completar las figuras incompletas para darles sentido.", imagen: "assets/gestalt_cierre_placeholder.png" }
+    "figura-fondo": { nombre: "Relación Figura-Fondo", explicacion: "Nuestra percepción organiza el campo visual en una 'figura' que resalta y un 'fondo' que la rodea...", imagen: "assets/gestalt_figura_fondo_placeholder.png" },
+    "proximidad": { nombre: "Principio de Proximidad", explicacion: "Tendemos a agrupar perceptualmente los elementos que están cercanos entre sí...", imagen: "assets/gestalt_proximidad_placeholder.png" },
+    "similitud": { nombre: "Principio de Similitud", explicacion: "Agrupamos los elementos que son similares en forma, tamaño, color...", imagen: "assets/gestalt_similitud_placeholder.png" },
+    "direccion": { nombre: "Principio de Continuidad", explicacion: "Los estímulos que guardan una continuidad de forma o dirección tienden a ser percibidos como una unidad...", imagen: "assets/gestalt_direccion_placeholder.png" },
+    "simplicidad": { nombre: "Principio de Simplicidad (Buena Forma)", explicacion: "Organizamos los campos perceptuales con rasgos simples, regulares y estables...", imagen: "assets/gestalt_simplicidad_placeholder.png" },
+    "cierre": { nombre: "Principio de Cierre", explicacion: "Nuestra mente tiende a completar las figuras incompletas para darles sentido...", imagen: "assets/gestalt_cierre_placeholder.png" }
 };
-
 const actividadesSensorialesPorEdad = {
-    "0-6m": [
-        { nombre: "Móviles coloridos y sonajeros", sentidos: ["Vista", "Oído"], desarrollo: "Seguimiento visual, localización auditiva" },
-        { nombre: "Masajes suaves con diferentes texturas", sentidos: ["Tacto"], desarrollo: "Conciencia corporal, relajación, vínculo" },
-        { nombre: "Tiempo boca abajo con estímulos visuales", sentidos: ["Vista", "Tacto", "Propiocepción"], desarrollo: "Fortalecimiento, exploración visual" },
-        { nombre: "Hablarle y cantarle mirándole", sentidos: ["Oído", "Vista"], desarrollo: "Vínculo, reconocimiento voz/rostro" }
-    ],
-    "6-12m": [
-        { nombre: "Bloques de texturas y encajables simples", sentidos: ["Tacto", "Vista"], desarrollo: "Manipulación fina, coordinación ojo-mano" },
-        { nombre: "Explorar alimentos seguros con manos (BLW)", sentidos: ["Tacto", "Gusto", "Olfato"], desarrollo: "Texturas, sabores, olores" },
-        { nombre: "Gatear sobre diferentes superficies", sentidos: ["Tacto", "Propiocepción"], desarrollo: "Percepción espacial, texturas" },
-        { nombre: "Libros de tela con sonidos y solapas", sentidos: ["Vista", "Oído", "Tacto"], desarrollo: "Multisensorial, causa-efecto" }
-    ],
-    "1-2a": [
-        { nombre: "Pintura de dedos o plastilina casera", sentidos: ["Tacto", "Vista", "Olfato"], desarrollo: "Creatividad, texturas, motricidad fina" },
-        { nombre: "Caminar descalzo (arena, césped seguro)", sentidos: ["Tacto", "Propiocepción"], desarrollo: "Equilibrio, percepción texturas" },
-        { nombre: "Instrumentos musicales sencillos", sentidos: ["Oído", "Tacto"], desarrollo: "Ritmo, causa-efecto auditivo" },
-        { nombre: "Probar y oler frutas variadas", sentidos: ["Gusto", "Olfato", "Tacto"], desarrollo: "Discriminación sabores/olores" }
-    ],
-    "2-3a": [
-        { nombre: "Circuitos con túneles y cojines", sentidos: ["Tacto", "Propiocepción", "Vista"], desarrollo: "Planificación motora, percepción espacial" },
-        { nombre: "Bolsa misteriosa (reconocer por tacto)", sentidos: ["Tacto"], desarrollo: "Estereognosia" },
-        { nombre: "Juegos de olores (botes especias, flores)", sentidos: ["Olfato"], desarrollo: "Discriminación olfativa" },
-        { nombre: "Jugar con agua a temperaturas (supervisado)", sentidos: ["Tacto"], desarrollo: "Percepción térmica" }
-    ]
+    "0-6m": [ { nombre: "Móviles coloridos y sonajeros", sentidos: ["Vista", "Oído"], desarrollo: "Seguimiento visual, localización auditiva" }, { nombre: "Masajes suaves con diferentes texturas", sentidos: ["Tacto"], desarrollo: "Conciencia corporal, relajación, vínculo" }, { nombre: "Tiempo boca abajo con estímulos visuales", sentidos: ["Vista", "Tacto", "Propiocepción"], desarrollo: "Fortalecimiento, exploración visual" }, { nombre: "Hablarle y cantarle mirándole", sentidos: ["Oído", "Vista"], desarrollo: "Vínculo, reconocimiento voz/rostro" } ],
+    "6-12m": [ { nombre: "Bloques de texturas y encajables simples", sentidos: ["Tacto", "Vista"], desarrollo: "Manipulación fina, coordinación ojo-mano" }, { nombre: "Explorar alimentos seguros con manos (BLW)", sentidos: ["Tacto", "Gusto", "Olfato"], desarrollo: "Texturas, sabores, olores" }, { nombre: "Gatear sobre diferentes superficies", sentidos: ["Tacto", "Propiocepción"], desarrollo: "Percepción espacial, texturas" }, { nombre: "Libros de tela con sonidos y solapas", sentidos: ["Vista", "Oído", "Tacto"], desarrollo: "Multisensorial, causa-efecto" } ],
+    "1-2a": [ { nombre: "Pintura de dedos o plastilina casera", sentidos: ["Tacto", "Vista", "Olfato"], desarrollo: "Creatividad, texturas, motricidad fina" }, { nombre: "Caminar descalzo (arena, césped seguro)", sentidos: ["Tacto", "Propiocepción"], desarrollo: "Equilibrio, percepción texturas" }, { nombre: "Instrumentos musicales sencillos", sentidos: ["Oído", "Tacto"], desarrollo: "Ritmo, causa-efecto auditivo" }, { nombre: "Probar y oler frutas variadas", sentidos: ["Gusto", "Olfato", "Tacto"], desarrollo: "Discriminación sabores/olores" } ],
+    "2-3a": [ { nombre: "Circuitos con túneles y cojines", sentidos: ["Tacto", "Propiocepción", "Vista"], desarrollo: "Planificación motora, percepción espacial" }, { nombre: "Bolsa misteriosa (reconocer por tacto)", sentidos: ["Tacto"], desarrollo: "Estereognosia" }, { nombre: "Juegos de olores (botes especias, flores)", sentidos: ["Olfato"], desarrollo: "Discriminación olfativa" }, { nombre: "Jugar con agua a temperaturas (supervisado)", sentidos: ["Tacto"], desarrollo: "Percepción térmica" } ]
 };
 let simulacionSensorialActual = {};
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Inicializar elementos de audio
+    sonidoExito = document.getElementById('sonidoExito');
+    sonidoClick = document.getElementById('sonidoClick');
+    sonidoHover = document.getElementById('sonidoHover');
+
+    // Menú Hamburguesa
     const menuToggle = document.getElementById('menu-toggle');
     const mainNav = document.getElementById('main-nav');
+    const mainNavList = document.getElementById('main-nav-list'); // Usar el ul para aria-controls
 
-    if (menuToggle && mainNav) {
+    if (menuToggle && mainNav && mainNavList) {
         menuToggle.addEventListener('click', () => {
             const isActive = mainNav.classList.toggle('is-active');
             menuToggle.setAttribute('aria-expanded', isActive.toString());
-            mainNav.setAttribute('aria-hidden', (!isActive).toString());
-            const icon = menuToggle.querySelector('i');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
+            // mainNavList.setAttribute('aria-hidden', (!isActive).toString()); // El nav general ya tiene aria-hidden
+            menuToggle.querySelector('i').classList.toggle('fa-bars');
+            menuToggle.querySelector('i').classList.toggle('fa-times');
             playSound(sonidoClick);
         });
 
-        mainNav.querySelectorAll('a').forEach(link => {
+        mainNavList.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 if (mainNav.classList.contains('is-active')) {
                     mainNav.classList.remove('is-active');
                     menuToggle.setAttribute('aria-expanded', 'false');
-                    mainNav.setAttribute('aria-hidden', 'true');
-                    const icon = menuToggle.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
+                    // mainNavList.setAttribute('aria-hidden', 'true');
+                    menuToggle.querySelector('i').classList.remove('fa-times');
+                    menuToggle.querySelector('i').classList.add('fa-bars');
                 }
             });
         });
     }
 
-    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+    // Smooth scrolling para enlaces de nav
+    document.querySelectorAll('#main-nav-list a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             playSound(sonidoClick);
@@ -84,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
+    // --- MODALES ---
     const modalTriggers = document.querySelectorAll('.modal-trigger');
     modalTriggers.forEach(trigger => {
         trigger.addEventListener('click', function() {
@@ -97,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         modal.querySelector('#modalGestaltNombre').textContent = info.nombre;
                         modal.querySelector('#modalGestaltExplicacion').textContent = info.explicacion;
                         const imgEl = modal.querySelector('#modalGestaltImagen');
-                        imgEl.src = info.imagen.startsWith('assets/') ? info.imagen : `assets/${info.imagen}`; // Asegurar ruta a assets
+                        imgEl.src = info.imagen; // Asegúrate que la ruta sea correcta assets/nombre.png
                         imgEl.alt = `Ejemplo de ${info.nombre}`;
                     }
                 }
@@ -114,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     window.addEventListener('click', (event) => {
-        document.querySelectorAll('.modal.is-visible').forEach(modal => {
+        document.querySelectorAll('.modal.is-visible').forEach(modal => { // Solo cerrar si está visible
             if (event.target === modal) {
                 closeModal(modal);
             }
@@ -123,41 +108,46 @@ document.addEventListener('DOMContentLoaded', () => {
     
     window.addEventListener('keydown', (event) => {
         if (event.key === 'Escape') {
-            document.querySelectorAll('.modal.is-visible').forEach(modal => {
-                closeModal(modal);
-            });
+            document.querySelectorAll('.modal.is-visible').forEach(modal => closeModal(modal));
         }
     });
 
+    // --- ACORDEONES ---
     document.querySelectorAll(".accordion-header").forEach(header => {
         header.addEventListener("click", function() {
             playSound(sonidoClick);
             const content = this.nextElementSibling;
-            const item = this.parentElement;
+            const item = this.parentElement; // El .accordion-item
             const isActive = item.classList.toggle('active');
+            
+            this.setAttribute('aria-expanded', isActive.toString());
+            content.setAttribute('aria-hidden', (!isActive).toString());
             this.classList.toggle('active', isActive);
 
-            if (isActive) {
+
+            if (isActive) { // Si este se está abriendo
+                // Cerrar otros en el mismo contenedor
                 const parentContainer = this.closest('.accordion-container');
                 if (parentContainer) {
                     parentContainer.querySelectorAll('.accordion-item.active').forEach(activeItem => {
                         if (activeItem !== item) {
                             activeItem.classList.remove('active');
-                            activeItem.querySelector('.accordion-header').classList.remove('active');
+                            const activeHeader = activeItem.querySelector('.accordion-header');
                             const activeContent = activeItem.querySelector('.accordion-content');
+                            activeHeader.classList.remove('active');
+                            activeHeader.setAttribute('aria-expanded', 'false');
+                            activeContent.setAttribute('aria-hidden', 'true');
                             activeContent.style.maxHeight = null;
                             activeContent.style.paddingTop = "0";
                             activeContent.style.paddingBottom = "0";
                         }
                     });
                 }
-            }
-
-            if (item.classList.contains('active')) {
+                // Abrir el actual
                 content.style.paddingTop = "1rem";
                 content.style.paddingBottom = "1rem";
                 content.style.maxHeight = content.scrollHeight + "px";
-            } else {
+            } else { // Si este se está cerrando
                 content.style.maxHeight = null;
                 content.style.paddingTop = "0";
                 content.style.paddingBottom = "0";
@@ -166,62 +156,55 @@ document.addEventListener('DOMContentLoaded', () => {
         header.addEventListener("mouseenter", () => playSound(sonidoHover, 0.2));
     });
   
+    // Sonidos para botones de acción y tabs
     document.querySelectorAll('.action-button, .tab-button, .action-button-inline').forEach(button => {
         button.addEventListener("mouseenter", () => playSound(sonidoHover, 0.2));
     });
 
+    // Simulador Sensorial: Carga inicial y listener
     const edadSelectSensorial = document.getElementById('sim-edad-sensorial');
     if(edadSelectSensorial) {
         edadSelectSensorial.addEventListener('change', cargarActividadesSimuladorSensorial);
         cargarActividadesSimuladorSensorial(); 
     }
 
-    document.querySelectorAll('#evolucion .tab-button').forEach(button => {
-        button.addEventListener('click', function() {
-            // Asumimos que el onclick="showEvolutionContent('id', this)" sigue en el HTML
-            // Si no, necesitamos el ID de otra forma, por ejemplo, data-attributes
-            const onclickAttr = this.getAttribute('onclick');
-            if (onclickAttr) {
-                const contentIdMatch = onclickAttr.match(/'([^']+)'/);
-                if (contentIdMatch && contentIdMatch[1]) {
-                    showEvolutionContent(contentIdMatch[1], this);
-                }
-            }
-        });
-    });
-
+    // Active link en nav según scroll
     const sections = document.querySelectorAll("main section[id]");
-    const navLi = document.querySelectorAll("nav ul li a");
-    window.addEventListener("scroll", () => {
-        let current = "";
-        const headerHeight = document.querySelector('header').offsetHeight || 70;
-        sections.forEach((section) => {
-            const sectionTop = section.offsetTop - headerHeight - 50;
-            if (pageYOffset >= sectionTop) {
-                current = section.getAttribute("id");
-            }
+    const navLinks = document.querySelectorAll("#main-nav-list a"); // Apuntar a los enlaces dentro de la lista
+    if (sections.length > 0 && navLinks.length > 0) {
+        window.addEventListener("scroll", () => {
+            let current = "";
+            const headerHeight = document.querySelector('header')?.offsetHeight || 70;
+            
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop - headerHeight - 50;
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach((a) => {
+                a.classList.remove("active-link");
+                if (a.getAttribute("href") === `#${current}`) {
+                    a.classList.add("active-link");
+                }
+            });
         });
-        navLi.forEach((a) => {
-            a.classList.remove("active-link");
-            if (a.getAttribute("href") === `#${current}`) {
-                a.classList.add("active-link");
-            }
-        });
-    });
+    }
 
 }); // Fin de DOMContentLoaded
 
 function openModal(modal) {
     if (!modal) return;
-    modal.style.display = "block";
-    modal.setAttribute('aria-hidden', 'false');
-    const focusable = modal.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-    if (focusable) focusable.focus();
+    modal.style.display = "block"; // Primero display block para calcular dimensiones si es necesario
+    setTimeout(() => { // Pequeño delay para permitir la transición de opacidad
+        modal.classList.add('is-visible');
+        modal.setAttribute('aria-hidden', 'false');
+        const focusable = modal.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        if (focusable) focusable.focus();
+    }, 10);
     document.body.style.overflow = 'hidden';
     playSound(sonidoClick);
-    requestAnimationFrame(() => { // Usar rAF para asegurar que el display block se aplique antes de la clase
-        modal.classList.add('is-visible');
-    });
 }
 
 function closeModal(modal) {
@@ -230,9 +213,10 @@ function closeModal(modal) {
     modal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
     playSound(sonidoClick);
-    modal.addEventListener('transitionend', () => {
-        modal.style.display = "none";
-    }, { once: true });
+    // Devolver el foco al trigger original si es posible (requiere más lógica para guardar el trigger)
+    setTimeout(() => {
+        modal.style.display = "none"; // Ocultar después de la animación
+    }, 300); // Coincidir con la duración de la animación CSS
 }
 
 function cargarActividadesSimuladorSensorial() {
@@ -259,8 +243,8 @@ function cargarActividadesSimuladorSensorial() {
       });
     }
 }
-// Hacerla global para que el select la llame al cambiar
-window.cargarActividadesSimuladorSensorial = cargarActividadesSimuladorSensorial;
+// Hacerla global si el select se añade/quita dinámicamente, sino el listener en DOMContentLoaded es suficiente
+// window.cargarActividadesSimuladorSensorial = cargarActividadesSimuladorSensorial;
 
 
 window.iniciarSimuladorSensorial = function() {
@@ -305,7 +289,9 @@ window.iniciarSimuladorSensorial = function() {
 
     resultadoDiv.innerHTML = mensajeResultado;
     playSound(sonidoExito);
-    document.getElementById('btnExportarSensorial').style.display = 'inline-block';
+    const btnExportar = document.getElementById('btnExportarSensorial');
+    if(btnExportar) btnExportar.style.display = 'inline-block';
+
 
     simulacionSensorialActual = {
         nombre: nombreSimulado,
@@ -338,24 +324,18 @@ window.exportarResultadosSensorial = function() {
     window.URL.revokeObjectURL(url);
 }
 
+// Esta función ya no se usa porque los acordeones ahora se manejan directamente en el HTML y CSS para el contenido resumido,
+// y los detalles están en modales. La dejo comentada por si la necesitas para otra cosa.
+/*
 window.showEvolutionContent = function(contentId, clickedButton) {
-  playSound(sonidoClick);
-  document.querySelectorAll('.evolution-content').forEach(content => {
-    content.classList.remove('active');
-  });
-  document.querySelectorAll('#evolucion .tab-button').forEach(button => {
-    button.classList.remove('active');
-  });
-
-  const targetContent = document.getElementById(contentId);
-  if (targetContent) targetContent.classList.add('active');
-  if (clickedButton) clickedButton.classList.add('active');
+  // ... (lógica anterior) ...
 }
+*/
 
-function playSound(audioElement, volume = 0.3) {
+function playSound(audioElement, volume = 0.2) { // Volumen aún más bajo para UI
   if (audioElement && typeof audioElement.play === 'function') {
     audioElement.currentTime = 0; 
     audioElement.volume = volume;
-    audioElement.play().catch(error => console.warn("Advertencia al reproducir sonido:", error.name, error.message));
+    audioElement.play().catch(error => { /* Silenciar errores de reproducción automática si el usuario no ha interactuado */ });
   }
 }
