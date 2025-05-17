@@ -6,247 +6,268 @@
   <title>El Universo Sensorial Infantil</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+  <!-- Icono para el menú hamburguesa (ejemplo con Font Awesome, podrías usar SVG) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
   <header>
-    <div class="header-content">
-        <svg class="header-svg" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 20 Q15 10 20 20 Q15 30 10 20 Z" fill="#FFD700" class="header-icon-anim"/>
-            <path d="M30 15 C25 15 25 25 30 25 C35 25 35 30 30 30 C25 30 25 35 30 35" stroke="#ADD8E6" stroke-width="2" fill="none" class="header-icon-anim" style="animation-delay: 0.1s;"/>
-            <path d="M45 25 Q50 15 55 25 L50 30 Z" fill="#90EE90" class="header-icon-anim" style="animation-delay: 0.2s;"/>
-            <path d="M65 22 Q70 18 75 22 Q70 26 65 22 M65 28 Q70 24 75 28" stroke="#FFB6C1" stroke-width="1.5" fill="none" class="header-icon-anim" style="animation-delay: 0.3s;"/>
-            <path d="M85 15 L80 20 L85 25 L90 20 L85 15 M82 23 L88 23" stroke="#FF6347" stroke-width="1.5" fill="none" class="header-icon-anim" style="animation-delay: 0.4s;"/>
-        </svg>
-        <h1 class="brand-title">El Universo Sensorial Infantil</h1>
+    <div class="header-container">
+        <div class="logo-area">
+            <svg class="header-svg" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="25" cy="25" r="23" fill="url(#gradLogo)"/>
+                <defs>
+                    <radialGradient id="gradLogo" cx="0.5" cy="0.5" r="0.7">
+                        <stop offset="0%" stop-color="var(--accent-color)"/>
+                        <stop offset="100%" stop-color="var(--primary-color)"/>
+                    </radialGradient>
+                </defs>
+                <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-family="Pacifico" font-size="18" fill="white">USI</text>
+            </svg>
+            <h1 class="brand-title">Universo Sensorial Infantil</h1>
+        </div>
+        <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav id="main-nav" class="main-nav" aria-hidden="true">
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#conceptos">Conceptos</a></li>
+            <li><a href="#gestalt">Teoría Gestalt</a></li>
+            <li><a href="#sentidos">Los Sentidos</a></li>
+            <li><a href="#evolucion">Evolución</a></li>
+            <li><a href="#alteraciones">Alteraciones</a></li>
+            <li><a href="#estimulacion">Estimulación (0-3a)</a></li>
+            <li><a href="#simulador">Simulador</a></li>
+          </ul>
+        </nav>
     </div>
     <p class="subtitle">Descubriendo el Mundo a Través de los Sentidos</p>
-    <nav>
-      <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#conceptos">Conceptos</a></li>
-        <li><a href="#gestalt">Teoría Gestalt</a></li>
-        <li><a href="#sentidos">Los Sentidos</a></li>
-        <li><a href="#evolucion">Evolución</a></li>
-        <li><a href="#alteraciones">Alteraciones</a></li>
-        <li><a href="#estimulacion">Estimulación (0-3a)</a></li>
-        <li><a href="#simulador">Simulador Sensorial</a></li>
-      </ul>
-    </nav>
   </header>
 
   <main>
-    <section id="inicio" class="fade-in">
+    <!-- SECCIÓN INICIO -->
+    <section id="inicio" class="fade-in content-padding">
       <h2>Bienvenido/a a la Exploración del Desarrollo Sensorial</h2>
-      <div class="section-content">
+      <div class="section-content two-column-layout">
         <div class="text-content">
-          <p>Desde el primer instante, incluso antes de nacer, los niños y niñas comienzan a explorar el mundo a través de sus sentidos. Este <strong>desarrollo sensorial</strong> es un viaje asombroso y fundamental, donde cada nueva sensación construye los cimientos de su aprendizaje y comprensión.</p>
-          <p>Imagina ser un pequeño explorador en un mundo lleno de colores, sonidos, texturas, sabores y olores por descubrir. Esta página es tu guía para acompañar a estos exploradores. Aquí encontrarás:</p>
+          <p>Desde el primer instante, los niños y niñas comienzan a explorar el mundo a través de sus sentidos. Este <strong>desarrollo sensorial</strong> es un viaje asombroso y fundamental, donde cada nueva sensación construye los cimientos de su aprendizaje.</p>
+          <p>Esta guía interactiva te ayudará a acompañar a estos pequeños exploradores. Aquí encontrarás:</p>
           <ul>
             <li>Qué son la <strong>sensación</strong> y la <strong>percepción</strong>.</li>
-            <li>Cómo teorías como la <strong>Gestalt</strong> nos ayudan a entender la percepción.</li>
-            <li>El fascinante funcionamiento y desarrollo de cada uno de <strong>los cinco sentidos</strong>.</li>
-            <li>Cómo evolucionan estas capacidades desde la etapa prenatal.</li>
-            <li>Información sobre posibles <strong>alteraciones sensoriales</strong> y las ayudas disponibles.</li>
-            <li>Ideas prácticas para la <strong>estimulación sensorial</strong> de 0 a 3 años.</li>
+            <li>Cómo teorías como la <strong>Gestalt</strong> explican la percepción.</li>
+            <li>El funcionamiento y desarrollo de <strong>los cinco sentidos</strong>.</li>
+            <li>Su evolución desde la etapa prenatal.</li>
+            <li>Información sobre <strong>alteraciones sensoriales</strong> y ayudas.</li>
+            <li>Ideas para la <strong>estimulación sensorial</strong> (0-3 años).</li>
           </ul>
-          <p>Al entender y fomentar el desarrollo sensorial, no solo potenciamos habilidades, sino que abrimos puertas a un crecimiento cognitivo, motor, emocional y social más rico y pleno. ¡Prepárate para descubrir cómo los sentidos tejen la maravillosa tela de la experiencia infantil!</p>
+          <p>Fomentar el desarrollo sensorial abre puertas a un crecimiento cognitivo, motor y emocional más pleno. ¡Descubre cómo los sentidos tejen la experiencia infantil!</p>
         </div>
         <div class="image-content">
           <svg viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg" class="decorative-svg anim-svg-float">
             <circle cx="100" cy="90" r="70" fill="url(#gradFondoInicio)"/>
             <defs>
                 <radialGradient id="gradFondoInicio" cx="0.5" cy="0.5" r="0.7">
-                    <stop offset="0%" stop-color="rgba(255, 223, 186, 0.5)"/> /* Melocotón suave */
-                    <stop offset="100%" stop-color="rgba(173, 216, 230, 0.3)"/> /* Azul claro suave */
+                    <stop offset="0%" stop-color="rgba(255, 223, 186, 0.5)"/>
+                    <stop offset="100%" stop-color="rgba(173, 216, 230, 0.3)"/>
                 </radialGradient>
             </defs>
-            <!-- Ojo estilizado -->
-            <g class="svg-sense-icon" transform="translate(70 70) scale(1.2)">
-                <ellipse cx="0" cy="0" rx="15" ry="8" fill="#fff" stroke="#555" stroke-width="1"/>
-                <circle cx="0" cy="0" r="4" fill="#5bc0de"/>
-                <circle cx="0" cy="0" r="1.5" fill="#222"/>
-            </g>
-            <!-- Mano estilizada (tacto) -->
-            <g class="svg-sense-icon" transform="translate(100 130) scale(0.8) rotate(15)">
-                 <path d="M-15-5 Q-20-15 -10-20 Q0-25 10-20 Q20-15 15-5 L10 15 Q0 20 -10 15 Z" fill="#ffb347" opacity="0.8"/>
-            </g>
+            <g class="svg-sense-icon" transform="translate(70 70) scale(1.2)"><ellipse cx="0" cy="0" rx="15" ry="8" fill="#fff" stroke="#555" stroke-width="1"/><circle cx="0" cy="0" r="4" fill="#5bc0de"/><circle cx="0" cy="0" r="1.5" fill="#222"/></g>
+            <g class="svg-sense-icon" transform="translate(100 130) scale(0.8) rotate(15)"><path d="M-15-5 Q-20-15 -10-20 Q0-25 10-20 Q20-15 15-5 L10 15 Q0 20 -10 15 Z" fill="#ffb347" opacity="0.8"/></g>
              <text x="50%" y="25" dominant-baseline="middle" text-anchor="middle" font-family="Pacifico" font-size="18" fill="#ff6347">¡Sentir es Crecer!</text>
           </svg>
         </div>
       </div>
     </section>
 
-    <section id="conceptos" class="slide-up">
+    <!-- SECCIÓN CONCEPTOS -->
+    <section id="conceptos" class="slide-up content-padding">
       <h2>Sensación y Percepción: Descifrando el Mundo</h2>
-      <p class="section-intro">Aunque a menudo los usamos como sinónimos, sensación y percepción son dos pasos distintos en cómo entendemos nuestro entorno. Son como el alfabeto y las palabras: uno es la base del otro.</p>
+      <p class="section-intro">Son dos pasos distintos: la sensación es el primer contacto, la percepción es darle sentido.</p>
       <div class="concept-columns">
         <div class="concept-card anim-pop-in">
           <h3><span class="concept-icon">⚡</span>Sensación: El Primer Contacto</h3>
-          <p>Es la <strong>detección inicial</strong> de un estímulo por nuestros sentidos. Piensa en la luz que llega a tus ojos, el sonido que alcanza tus oídos o la presión de un objeto sobre tu piel.</p>
-          <p><strong>¿Cómo ocurre?</strong>
-            <ol>
-              <li>Un estímulo (luz, sonido, olor, etc.) activa un órgano sensorial (ojo, oído, nariz).</li>
-              <li>Las células receptoras de ese órgano convierten el estímulo en una señal nerviosa.</li>
-              <li>Esta señal viaja al cerebro.</li>
-            </ol>
-            Es un proceso más bien <strong>fisiológico y automático</strong>. No implica todavía una comprensión de lo que se está sintiendo.
-          </p>
+          <p>Es la <strong>detección inicial</strong> de un estímulo (luz, sonido, olor) por nuestros sentidos. Un proceso fisiológico y automático.</p>
         </div>
-        <div class="concept-card anim-pop-in" style="animation-delay: 0.2s;">
+        <div class="concept-card anim-pop-in" style="animation-delay: 0.1s;">
           <h3><span class="concept-icon">🧠</span>Percepción: Dando Sentido</h3>
-          <p>Es el proceso de <strong>organizar, interpretar y dar significado</strong> a las sensaciones que recibe el cerebro. Es cuando esa luz se convierte en "ver una flor roja" o ese sonido en "escuchar una canción".</p>
-          <p><strong>¿Qué implica?</strong>
-            <ul>
-              <li><strong>Conciencia:</strong> Nos damos cuenta del estímulo.</li>
-              <li><strong>Interpretación:</strong> El cerebro utiliza experiencias pasadas, el contexto actual y nuestras emociones para entender la sensación.</li>
-              <li><strong>Complejidad:</strong> Es un proceso activo y más complejo que la simple detección.</li>
-            </ul>
-            La percepción nos permite interactuar con el mundo de forma significativa.
-          </p>
+          <p>Es el proceso de <strong>organizar e interpretar</strong> las sensaciones. Implica conciencia y se ve afectada por la experiencia y el contexto.</p>
         </div>
       </div>
-      <div class="para-saber-mas">
-        <h4>Curiosidad: La Realidad y Nuestros Sentidos</h4>
-        <p>¿Sabías que lo que percibimos no siempre es una copia exacta de la realidad? Nuestras experiencias y la forma en que nuestro cerebro procesa la información pueden crear ilusiones ópticas o percepciones diferentes entre personas. ¡El mundo es tal como lo percibimos!</p>
-      </div>
+       <button class="action-button modal-trigger" data-modal-target="modal-sensacion-percepcion">Leer más sobre Sensación y Percepción</button>
     </section>
 
-    <section id="gestalt" class="fade-in">
+    <!-- SECCIÓN GESTALT -->
+    <section id="gestalt" class="fade-in content-padding">
       <h2>Teoría de la Gestalt: Viendo el Panorama Completo</h2>
-      <p class="section-intro">La psicología de la Gestalt nos enseña que nuestra mente no percibe el mundo como piezas sueltas, sino que tiende a organizar la información en "todos" significativos o "formas" (Gestalt en alemán). Estos principios nos ayudan a entender cómo damos sentido visual al mundo de manera casi instantánea.</p>
+      <p class="section-intro">La Gestalt explica cómo nuestra mente organiza la información sensorial en "todos" significativos, en lugar de piezas sueltas.</p>
       <div class="cards">
-        <div class="card" data-gestalt="figura-fondo"><h3>Figura y Fondo</h3><p>Distinguimos un objeto principal (figura) del entorno que lo rodea (fondo).</p></div>
-        <div class="card" data-gestalt="proximidad"><h3>Proximidad</h3><p>Agrupamos elementos que están cerca unos de otros.</p></div>
-        <div class="card" data-gestalt="similitud"><h3>Similitud</h3><p>Unimos elementos que se parecen en color, forma o tamaño.</p></div>
-        <div class="card" data-gestalt="direccion"><h3>Continuidad</h3><p>Preferimos ver líneas o patrones continuos en lugar de cambios bruscos.</p></div>
-        <div class="card" data-gestalt="simplicidad"><h3>Buena Forma</h3><p>Nuestra mente prefiere las formas simples, ordenadas y estables.</p></div>
-        <div class="card" data-gestalt="cierre"><h3>Cierre</h3><p>Tendemos a "cerrar" o completar figuras que están incompletas.</p></div>
+        <div class="card modal-trigger" data-modal-target="modal-gestalt" data-gestalt-key="figura-fondo"><h3>Figura y Fondo</h3><p>Distinguimos un objeto del fondo.</p></div>
+        <div class="card modal-trigger" data-modal-target="modal-gestalt" data-gestalt-key="proximidad"><h3>Proximidad</h3><p>Agrupamos lo cercano.</p></div>
+        <div class="card modal-trigger" data-modal-target="modal-gestalt" data-gestalt-key="similitud"><h3>Similitud</h3><p>Unimos lo parecido.</p></div>
+        <div class="card modal-trigger" data-modal-target="modal-gestalt" data-gestalt-key="direccion"><h3>Continuidad</h3><p>Seguimos patrones.</p></div>
+        <div class="card modal-trigger" data-modal-target="modal-gestalt" data-gestalt-key="simplicidad"><h3>Buena Forma</h3><p>Preferimos lo simple.</p></div>
+        <div class="card modal-trigger" data-modal-target="modal-gestalt" data-gestalt-key="cierre"><h3>Cierre</h3><p>Completamos figuras.</p></div>
       </div>
     </section>
 
-    <section id="sentidos" class="slide-up">
+    <!-- SECCIÓN LOS SENTIDOS -->
+    <section id="sentidos" class="slide-up content-padding">
       <h2>Los Cinco Sentidos: Nuestras Antenas al Mundo</h2>
-      <p class="section-intro">Cada sentido es una ventana especializada a través de la cual los niños y niñas (¡y nosotros!) recibimos información vital. Exploremos brevemente cómo funciona cada uno.</p>
-      <div class="stimulation-accordion">
+      <p class="section-intro">Cada sentido es una ventana especializada. Exploremos brevemente cómo funciona cada uno.</p>
+      <div class="accordion-container">
         <div class="accordion-item">
-          <button class="accordion-header"><span class="sense-icon">👅</span>El Gusto: Saboreando la Vida</button>
-          <div class="accordion-content">
-            <p>El gusto nos permite identificar sabores a través del contacto de sustancias químicas (disueltas en saliva) con las <strong>papilas gustativas</strong> en la lengua. Estas envían señales al cerebro.</p>
-            <p><strong>Sabores Básicos:</strong> Dulce (energía), salado (minerales), ácido (alerta), amargo (posible peligro), y umami (sabroso, proteico).</p>
-            <p>El olfato juega un papel crucial: ¡por eso la comida sabe diferente cuando estamos resfriados!</p>
-          </div>
+          <button class="accordion-header"><span class="sense-icon">👅</span>El Gusto</button>
+          <div class="accordion-content"><p>Identifica sabores (dulce, salado, ácido, amargo, umami) mediante las papilas gustativas. El olfato es su gran aliado.</p></div>
         </div>
         <div class="accordion-item">
-          <button class="accordion-header"><span class="sense-icon">👃</span>El Olfato: El Sentido de los Recuerdos</button>
-          <div class="accordion-content">
-            <p>El olfato capta moléculas aromáticas en el aire a través del <strong>epitelio olfatorio</strong> en la nariz. Las células receptoras envían la información al cerebro.</p>
-            <p><strong>Un Dato Curioso:</strong> Las células olfativas se renuevan constantemente. El olfato está fuertemente ligado a las emociones y la memoria.</p>
-          </div>
+          <button class="accordion-header"><span class="sense-icon">👃</span>El Olfato</button>
+          <div class="accordion-content"><p>Capta moléculas aromáticas a través del epitelio olfatorio. Ligado a emociones y memoria.</p></div>
         </div>
         <div class="accordion-item">
-          <button class="accordion-header"><span class="sense-icon">👁️</span>La Vista: Colores y Formas del Mundo</button>
-          <div class="accordion-content">
-            <p>La vista traduce la luz en imágenes. La luz entra por la <strong>córnea</strong>, se enfoca por el <strong>cristalino</strong> y llega a la <strong>retina</strong>. En la retina, los <strong>conos</strong> (para colores y luz brillante) y los <strong>bastones</strong> (para luz tenue y blanco/negro) convierten la luz en señales nerviosas que viajan por el nervio óptico al cerebro.</p>
-            <p>La <strong>acomodación</strong> es el proceso por el cual el cristalino cambia de forma para enfocar objetos a diferentes distancias.</p>
-          </div>
+          <button class="accordion-header"><span class="sense-icon">👁️</span>La Vista</button>
+          <div class="accordion-content"><p>Traduce la luz en imágenes. Conos para colores, bastones para luz tenue. La acomodación enfoca.</p></div>
+        </div>
+         <div class="accordion-item">
+          <button class="accordion-header"><span class="sense-icon">👂</span>La Audición</button>
+          <div class="accordion-content"><p>Percibe ondas sonoras y contribuye al equilibrio. Del tímpano a los huesecillos y luego a la cóclea.</p></div>
         </div>
         <div class="accordion-item">
-          <button class="accordion-header"><span class="sense-icon">👂</span>La Audición: Sonidos y Equilibrio</button>
-          <div class="accordion-content">
-            <p>El oído capta ondas sonoras y también nos ayuda con el equilibrio.
-            <strong>Oído Externo:</strong> La oreja y el conducto auditivo recogen el sonido hasta el <strong>tímpano</strong>, que vibra.
-            <strong>Oído Medio:</strong> Los huesecillos (martillo, yunque, estribo) amplifican estas vibraciones. La <strong>trompa de Eustaquio</strong> iguala la presión.
-            <strong>Oído Interno:</strong> En la <strong>cóclea</strong> (caracol), las vibraciones mueven un fluido que estimula células pilosas, generando señales nerviosas. Los <strong>canales semicirculares</strong> detectan el movimiento y son clave para el equilibrio.</p>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <button class="accordion-header"><span class="sense-icon">🖐️</span>El Tacto: Conectando con el Entorno</button>
-          <div class="accordion-content">
-            <p>El tacto nos permite sentir presión, temperatura, dolor y texturas a través de receptores en la <strong>piel</strong>. La piel tiene dos capas principales: la <strong>epidermis</strong> (externa) y la <strong>dermis</strong> (interna).</p>
-            <p>Es un sentido fundamental para el bienestar emocional y la exploración física del mundo, especialmente en la infancia temprana.</p>
-          </div>
+          <button class="accordion-header"><span class="sense-icon">🖐️</span>El Tacto</button>
+          <div class="accordion-content"><p>Siente presión, temperatura, dolor y texturas a través de receptores en la piel (epidermis y dermis).</p></div>
         </div>
       </div>
+      <button class="action-button modal-trigger" data-modal-target="modal-detalle-sentidos">Conoce más sobre cada Sentido</button>
     </section>
 
-    <section id="evolucion" class="fade-in">
+    <!-- SECCIÓN EVOLUCIÓN -->
+    <section id="evolucion" class="fade-in content-padding">
       <h2>Evolución Sensorial: Un Desarrollo Continuo</h2>
-      <p class="section-intro">Los sentidos no aparecen de golpe; se desarrollan gradualmente, comenzando en el útero materno y madurando a lo largo de los primeros años. Conocer esta progresión nos ayuda a entender las capacidades de los niños en cada etapa.</p>
-      <div class="age-tabs">
-        <button class="tab-button active" onclick="showEvolutionContent('content-prenatal', this)">Desarrollo Prenatal</button>
-        <button class="tab-button" onclick="showEvolutionContent('content-visual', this)">Percepción Visual (0-6+ meses)</button>
-        <button class="tab-button" onclick="showEvolutionContent('content-auditiva', this)">Percepción Auditiva (Recién Nacido+)</button>
-        <button class="tab-button" onclick="showEvolutionContent('content-otros-sentidos', this)">Tacto, Gusto y Olfato (Recién Nacido+)</button>
-      </div>
-
-      <div id="evolution-content-container">
-        <div id="content-prenatal" class="evolution-content active">
-          <h3>Los Sentidos en el Útero: ¡Ya Perciben!</h3>
-          <p>Aunque parezca increíble, el bebé ya experimenta el mundo sensorialmente antes de nacer:</p>
-          <ul>
-            <li><strong>Gusto:</strong> El feto traga líquido amniótico y puede distinguir sabores. ¡Prefiere lo dulce!</li>
-            <li><strong>Olfato:</strong> Se familiariza con el olor del líquido amniótico, lo que le ayudará a reconocer a su madre.</li>
-            <li><strong>Audición:</strong> Hacia la semana 28 de gestación, el feto reacciona a sonidos. Puede reconocer la voz de su madre y hasta recordar canciones que ella canta. El latido del corazón materno es un sonido reconfortante.</li>
-            <li><strong>Vista:</strong> Aunque limitado, hacia la semana 27 los párpados se abren y puede percibir cambios de luz (como un brillo rojizo) a través del vientre materno.</li>
-            <li><strong>Tacto:</strong> Siente el contacto con las paredes del útero y consigo mismo.</li>
-          </ul>
-          <p>Estas experiencias tempranas son el inicio de su adaptación al mundo exterior.</p>
+      <p class="section-intro">Los sentidos se desarrollan gradualmente, desde el útero materno. Conocer esta progresión nos ayuda a entender las capacidades infantiles.</p>
+      <div class="accordion-container">
+        <div class="accordion-item">
+          <button class="accordion-header">Desarrollo Prenatal: ¡Ya Perciben!</button>
+          <div class="accordion-content"><p>En el útero, el feto ya experimenta con el gusto, olfato, audición, vista (limitada) y tacto. Estas experiencias tempranas son cruciales.</p></div>
         </div>
-        <div id="content-visual" class="evolution-content">
-          <h3>Desarrollo de la Vista: Un Mundo que se Enfoca Poco a Poco</h3>
-          <p>Al nacer, la vista es el sentido menos desarrollado, pero madura rápidamente:</p>
-          <ul>
-            <li><strong>Recién Nacido:</strong> Ve mejor a unos 20-25 cm (distancia perfecta para ver la cara de quien le alimenta). Le atraen los contrastes fuertes (blanco/negro) y los rostros humanos. Puede haber una desalineación temporal de los ojos (estrabismo funcional).</li>
-            <li><strong>1er Mes:</strong> Sigue objetos con la mirada (hasta 90º). Empieza a reconocer el rostro de su madre.</li>
-            <li><strong>2º Mes:</strong> Mejora la capacidad de enfocar con ambos ojos (convergencia binocular). Sigue objetos en movimiento y prefiere el movimiento de personas.</li>
-            <li><strong>3er Mes:</strong> Muestra más interés por lo que ve y juega con sus manos y pies, observándolos.</li>
-            <li><strong>4º-6º Mes:</strong> Ve objetos a diferentes distancias y percibe detalles pequeños. Se establece la constancia de forma y tamaño. La percepción de la profundidad mejora, especialmente cuando empieza a moverse más. Distingue bien los colores.</li>
-            <li><strong>Exploración Visual:</strong> Un bebé de 1 mes tiende a mirar los bordes de un rostro; a los 2 meses, se fija más en los ojos y la boca.</li>
-          </ul>
+        <div class="accordion-item">
+          <button class="accordion-header">Percepción Visual (0-6+ meses)</button>
+          <div class="accordion-content"><p>Al nacer, la vista es el sentido menos maduro. Mejora el enfoque, seguimiento de objetos, reconocimiento de rostros y percepción de colores y profundidad gradualmente.</p></div>
         </div>
-        <div id="content-auditiva" class="evolution-content">
-          <h3>Desarrollo Auditivo: Conectados al Sonido desde el Principio</h3>
-          <p>La audición está bastante bien desarrollada al nacer:</p>
-          <ul>
-            <li><strong>Recién Nacido:</strong> Reacciona a sonidos (a veces con reflejos por sonidos oídos en el útero). Se sobresalta con ruidos fuertes y se calma con sonidos rítmicos (como latidos o nanas). Gira la cabeza hacia la fuente del sonido. Prefiere la voz humana, especialmente la de su madre.</li>
-            <li><strong>1er Mes:</strong> Oye bien, aunque localizar el sonido exacto aún es un reto.</li>
-            <li><strong>2º Mes:</strong> Empieza a memorizar sonidos que le interesan y distingue sonidos del habla muy parecidos (ej: "ma" de "na").</li>
-            <li><strong>3er Mes:</strong> Imita sonidos y distingue el tono emocional de las voces (alegría, enfado).</li>
-            <li><strong>4º Mes en adelante:</strong> Se fija más en la cara de quien habla y distingue mejor los tonos de voz. Empieza a captar reglas del lenguaje como la acentuación.</li>
-          </ul>
+        <div class="accordion-item">
+          <button class="accordion-header">Percepción Auditiva (Recién Nacido+)</button>
+          <div class="accordion-content"><p>Bien desarrollada al nacer. Los bebés reconocen voces (especialmente la materna), se calman con sonidos rítmicos y localizan sonidos.</p></div>
         </div>
-        <div id="content-otros-sentidos" class="evolution-content">
-          <h3>Tacto, Gusto y Olfato: Sentidos Primordiales</h3>
-          <p>Estos sentidos son vitales desde el nacimiento para la supervivencia, el confort y el vínculo.</p>
-          <ul>
-            <li><strong>Olfato:</strong>
-              <ul>
-                <li>Recién nacidos reaccionan a olores de forma similar a los adultos (ej: agrado por plátano, desagrado por huevo podrido).</li>
-                <li>Reconocen el olor de la leche materna en pocos días, lo que les ayuda a alimentarse y a identificar a su madre.</li>
-              </ul>
-            </li>
-            <li><strong>Gusto:</strong>
-              <ul>
-                <li>Desde el nacimiento, muestran preferencias: relajan la cara con lo dulce, fruncen los labios con lo ácido, y abren la boca en arco con lo amargo.</li>
-                <li>Exploran el mundo llevándose objetos a la boca.</li>
-                <li>Hacia los 4 meses, desarrollan preferencia por el sabor salado, preparándose para nuevos alimentos.</li>
-              </ul>
-            </li>
-            <li><strong>Tacto:</strong>
-              <ul>
-                <li>Es un "lenguaje" esencial para el recién nacido. El contacto con la madre proporciona información, seguridad y bienestar.</li>
-                <li>Las caricias y el contacto físico calman el estrés y el dolor.</li>
-                <li>A medida que pueden agarrar objetos, el tacto se convierte en una herramienta clave para explorar texturas y formas. A partir de los 6 meses, aunque la boca sigue siendo importante, la manipulación con las manos se vuelve más precisa.</li>
-              </ul>
-            </li>
-          </ul>
+        <div class="accordion-item">
+          <button class="accordion-header">Tacto, Gusto y Olfato (Recién Nacido+)</button>
+          <div class="accordion-content"><p>Estos sentidos son vitales desde el nacimiento para la supervivencia y el vínculo. Reconocen olores y sabores básicos, y el tacto es un lenguaje primordial.</p></div>
         </div>
       </div>
+      <button class="action-button modal-trigger" data-modal-target="modal-detalle-evolucion">Ver Detalles de la Evolución Sensorial</button>
     </section>
 
-    <section id="alteraciones" class="slide-up">
+    <!-- SECCIÓN ALTERACIONES -->
+    <section id="alteraciones" class="slide-up content-padding">
         <h2>Alteraciones Sensoriales y Apoyos</h2>
-        <p class="section-intro">Algunos niños pueden enfrentar desafíos en su desarrollo sensorial. Conocer las principales alteraciones y las ayudas disponibles es clave para ofrecer el apoyo adecuado.</p>
-        <div class="stimulation-accordion">
+        <p class="section-intro">Conocer los desafíos sensoriales y las ayudas disponibles es clave para un apoyo adecuado.</p>
+        <div class="accordion-container">
             <div class="accordion-item">
-                <button class="accordion-header"><span class="s
+                <button class="accordion-header"><span class="sense-icon">🔇</span>Desafíos en la Audición</button>
+                <div class="accordion-content"><p>La deficiencia auditiva varía de leve a total. Puede ser conductiva, neurosensorial, mixta o central. Afecta el desarrollo del lenguaje.</p> <button class="action-button-inline modal-trigger" data-modal-target="modal-ayudas-auditivas">Ayudas Auditivas</button></div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header"><span class="sense-icon">🦯</span>Desafíos en la Visión</button>
+                <div class="accordion-content"><p>La deficiencia visual abarca desde baja visión a ceguera. Se evalúa por agudeza y campo visual.</p> <button class="action-button-inline modal-trigger" data-modal-target="modal-ayudas-visuales">Ayudas Visuales</button></div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header"><span class="sense-icon">🧏</span><span class="sense-icon">🦯</span>Sordoceguera</button>
+                <div class="accordion-content"><p>Combina deficiencias visuales y auditivas. Requiere sistemas de comunicación adaptados como el dactilológico en palma.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN ESTIMULACIÓN -->
+    <section id="estimulacion" class="fade-in content-padding">
+      <h2>Estimulación Sensorial (0-3 Años): Jugando para Crecer</h2>
+      <p class="section-intro">Ofrecer experiencias sensoriales variadas y adecuadas a la edad es fundamental para acompañar la curiosidad natural del niño.</p>
+       <div class="accordion-container">
+            <div class="accordion-item">
+                <button class="accordion-header"><span class="sense-icon">🎯</span>Objetivos Clave</button>
+                <div class="accordion-content"><p>Mejorar fijación visual, discriminación auditiva, reconocimiento táctil, discriminación de olores y sabores.</p></div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header"><span class="sense-icon">🍓</span><span class="sense-icon">🌸</span>Ideas para Gusto y Olfato</button>
+                <div class="accordion-content"><p>Explorar alimentos seguros, juegos de "adivinar el olor" con botes (especias, flores), probar sabores contrastantes.</p></div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header"><span class="sense-icon">🖼️</span>Ideas para la Vista</button>
+                <div class="accordion-content"><p>Móviles con contrastes, juguetes con caras, libros coloridos, juegos de luces (supervisado), bloques.</p></div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header"><span class="sense-icon">🎶</span>Ideas para la Audición</button>
+                <div class="accordion-content"><p>Hablar y cantar, música variada, sonajeros, instrumentos sencillos, identificar sonidos del entorno.</p></div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header"><span class="sense-icon">🤲</span>Ideas para el Tacto</button>
+                <div class="accordion-content"><p>Masajes, contacto piel con piel, juguetes con texturas, jugar con arena/agua (supervisado), plastilina, cajas sensoriales.</p></div>
+            </div>
+        </div>
+        <button class="action-button modal-trigger" data-modal-target="modal-detalle-estimulacion">Ver Actividades Detalladas por Edad</button>
+    </section>
+
+    <!-- SECCIÓN SIMULADOR -->
+    <section id="simulador" class="slide-up content-padding">
+      <h2>Simulador de Estimulación Sensorial (0-3 Años)</h2>
+      <p class="section-intro">Selecciona edad y actividades para ver qué sentidos se trabajan y qué desarrollo se fomenta.</p>
+      <div class="simulator-controls">
+        <label for="sim-edad-sensorial">Etapa de Edad (0-3 años):</label>
+        <select id="sim-edad-sensorial" aria-label="Selecciona la etapa de edad del niño">
+          <option value="0-6m">0-6 Meses</option>
+          <option value="6-12m">6-12 Meses</option>
+          <option value="1-2a">1-2 Años</option>
+          <option value="2-3a">2-3 Años</option>
+        </select>
+        <fieldset>
+            <legend>Actividades de Estimulación Realizadas:</legend>
+            <div id="sim-actividades-sensorial-checkboxes" role="group" aria-labelledby="label-actividades">
+              <!-- Checkboxes se cargarán con JS -->
+            </div>
+        </fieldset>
+        <button onclick="iniciarSimuladorSensorial()" class="action-button">Iniciar Simulación</button>
+      </div>
+      <div id="resultadoSimulacionSensorial" aria-live="polite">
+        <p><em>Los resultados aparecerán aquí...</em></p>
+      </div>
+      <button onclick="exportarResultadosSensorial()" class="action-button" id="btnExportarSensorial" style="display:none;">Exportar Resultados (CSV)</button>
+    </section>
+  </main>
+
+  <footer class="content-padding">
+    <svg class="footer-svg" viewBox="0 0 200 30" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 20 Q 25 0 50 20 T 100 20 T 150 20 T 200 20" stroke="#FFFFFF" stroke-width="2" fill="none" opacity="0.5"/>
+        <path d="M0 25 Q 25 5 50 25 T 100 25 T 150 25 T 200 25" stroke="#FFFFFF" stroke-width="2" fill="none" opacity="0.7"/>
+    </svg>
+    <p>© <span id="currentYear"></span> Universo Sensorial Infantil.</p>
+  </footer>
+
+  <!-- MODALES -->
+  <div id="modal-sensacion-percepcion" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-labelledby="modal-sp-title">
+      <button class="close-button" aria-label="Cerrar modal">×</button>
+      <h3 id="modal-sp-title">Profundizando en Sensación y Percepción</h3>
+      <div id="modal-sp-content">
+        <h4>Sensación: El Proceso Fisiológico</h4>
+        <p>La Real Academia Española (RAE) define sensación como la “impresión que las cosas producen por medio de los sentidos". El Diccionario Terminológico de Ciencias Médicas la define como una “impresión trasmitida por un nervio aferente desde los órganos de los sentidos o de otra parte”.</p>
+        <p>Palacios Sáiz (2000) la define como un hecho psíquico elemental, resultante de la acción de un estímulo externo sobre los órganos receptores sensoriales (sentidos), que se encargan de transmitir la información recibida a un centro nervioso.</p>
+        <p><strong>Proceso Sensorial Detallado:</strong> Un estímulo físico (luz, onda sonora, molécula química) del mundo externo excita o pone en actividad el órgano del sentido adecuado. Este órgano está constituido por células nerviosas especializadas (receptores) conectadas a la corteza cerebral. La transmisión fisiológica de esta excitación a la corteza cerebral produce el fenómeno psíquico de la sensación.</p>
+        
+        <h4>Percepción: La Interpretación Consciente</h4>
+        <p>La RAE define percibir como "recibir por uno de los sentidos las imágenes, impresiones o sensaciones externas". Según T. Bower, la percepción es “cualquier proceso mediante el cual nos damos cuenta de inmediato de aquello que está sucediendo fuera de nosotros". El Diccionario de Psicología de H.C. Warren la define como “el acto de darse cuenta de los objetos externos, sus cualidades o relaciones que siguen directamente a los procesos sensoriales, a diferencia de la memoria o de otros procesos centrales". Encarta la define como el “proceso mediante el cual la conciencia integra los estímulos sensoriales sobre objetos, hechos o situaciones y los transforma en experiencia útil”.</p>
+        <p><strong>Distinción Clave Ampliada:</strong> La sensación es la detección y transmisión de un estímulo. La percepción ocurre cuando el individuo es CONSCIENTE de ese estímulo, es decir, cuando conoce e interpreta sus cualidades y relaciones. Por ello, la percepción implica mayor complejidad y se ve afectada por la experiencia anterior, el contexto y el estado afectivo.</p>
+        <p>Aunque la frontera es a veces difusa, algunos autores ven ambos como pasos de un mismo proceso de extracción de información que lleva al desarrollo cognitivo.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-gestalt" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-labelledby="modal-gestalt-title">
+      <button class="close-button" aria-label="Cerrar modal">×</button>
+   
